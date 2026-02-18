@@ -1,0 +1,17 @@
+layout {
+    gaps 20
+    
+    border {
+        width 3
+        active-color "#FF4FA3"
+        inactive-color "#6A0D45"
+    }
+    
+    focus-ring {
+        width 4
+        active-color "#D9007E"
+    }
+    
+}
+
+prefer-no-csd

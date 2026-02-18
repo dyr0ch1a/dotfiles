@@ -1,0 +1,9 @@
+binds {
+    // Workspace scroll mode
+    Mod+Ctrl+WheelScrollDown cooldown-ms=150 { focus-workspace-down; }
+    Mod+Ctrl+WheelScrollUp cooldown-ms=150 { focus-workspace-up; }
+
+    // Focus scroll mode
+    Mod+Shift+WheelScrollDown { focus-column-right; }
+    Mod+Shift+WheelScrollUp { focus-column-left; }
+}

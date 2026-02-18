@@ -1,0 +1,429 @@
+# Cyberpunk Pink Theme for Helix - Extended Edition
+# Based on pink-purple-black cyberpunk palette
+# Enhanced with additional color variations and language-specific highlighting
+
+# =============================================================================
+# ПАЛИТРА ЦВЕТОВ
+# =============================================================================
+# Основные:
+#   #FF4FA3 - Ярко-розовый (акценты, волосы, статичные элементы)
+#   #6A0D45 - Тёмный пурпур (тени, фон)
+#   #0A0A0A - Чёрный угольный (провода, линии, контраст)
+#
+# Дополняющие:
+#   #2E2E2E - Серый графит (переходы)
+#   #F7C6D9 - Бледно-розовый (подсветка, детали)
+#   #D9007E - Электрический фуксия (глитч-эффект)
+#
+# Акценты:
+#   #FF007F - Неоновый розовый (вспышки, цифровой шум)
+#   #BFBFBF - Металлический серебристый (технологичность)
+#
+# Расширенные оттенки:
+#   #8B0A50 - Глубокий пурпур (тёмные акценты)
+#   #FF69B4 - Светло-розовый (яркие детали)
+#   #C71585 - Средний фиолетово-красный (средние тона)
+#   #4A0D30 - Очень тёмный пурпур (глубокие тени)
+#   #E0115F - Рубиновый (дополнительный акцент)
+#   #FF1493 - Тёмно-розовый (вариации)
+#   #7F1852 - Сливовый (приглушённые акценты)
+#
+# ИСПРАВЛЕННЫЕ ЦВЕТА (чёткое разграничение):
+#   #FF3355 - Красный неон      → error, diff.minus
+#   #FF8C00 - Оранжевый неон    → warning, diff.delta
+#   #00BFFF - Голубой неон      → info
+#   #888888 - Серый             → hint
+#   #39FF14 - Зелёный неон      → diff.plus, git.added
+#   #FFD700 - Золотой           → constant.numeric.float
+#   #FF6600 - Оранжевый         → constant.numeric.hex
+#   #AA44FF - Фиолетовый неон   → function.builtin, type.builtin
+# =============================================================================
+
+# =============================================================================
+# ИНТЕРФЕЙС - UI
+# =============================================================================
+
+# Основные цвета интерфейса
+"ui.background" = { bg = "#0A0A0A" }
+"ui.background.separator" = "#6A0D45"
+
+# Курсор и его варианты
+"ui.cursor" = { fg = "#0A0A0A", bg = "#FF4FA3", modifiers = ["bold"] }
+"ui.cursor.primary" = { fg = "#0A0A0A", bg = "#FF007F", modifiers = ["bold"] }
+"ui.cursor.secondary" = { fg = "#0A0A0A", bg = "#D9007E" }
+"ui.cursor.match" = { fg = "#0A0A0A", bg = "#D9007E" }
+"ui.cursor.insert" = { fg = "#0A0A0A", bg = "#F7C6D9" }
+"ui.cursor.select" = { fg = "#0A0A0A", bg = "#6A0D45" }
+"ui.cursorline.primary" = { bg = "#2E2E2E" }
+"ui.cursorline.secondary" = { bg = "#1A1A1A" }
+"ui.cursorcolumn.primary" = { bg = "#2E2E2E" }
+"ui.cursorcolumn.secondary" = { bg = "#1A1A1A" }
+
+# Выделение и подсветка
+"ui.selection" = { bg = "#6A0D45" }
+"ui.selection.primary" = { bg = "#8B0A50" }
+"ui.highlight" = { bg = "#2E2E2E" }
+"ui.highlight.frameline" = { bg = "#6A0D45" }
+"ui.highlighter.primary" = { bg = "#D9007E", modifiers = ["bold"] }
+"ui.highlighter.secondary" = { bg = "#8B0A50" }
+
+# Строка состояния
+"ui.statusline" = { fg = "#F7C6D9", bg = "#2E2E2E" }
+"ui.statusline.inactive" = { fg = "#BFBFBF", bg = "#0A0A0A" }
+"ui.statusline.normal" = { fg = "#0A0A0A", bg = "#FF4FA3", modifiers = ["bold"] }
+"ui.statusline.insert" = { fg = "#0A0A0A", bg = "#FF007F", modifiers = ["bold"] }
+"ui.statusline.select" = { fg = "#0A0A0A", bg = "#D9007E", modifiers = ["bold"] }
+"ui.statusline.separator" = "#6A0D45"
+# Дополнительные варианты режимов
+"mode.normal" = { fg = "#0A0A0A", bg = "#FF4FA3", modifiers = ["bold"] }
+"mode.insert" = { fg = "#0A0A0A", bg = "#FF007F", modifiers = ["bold"] }
+"mode.select" = { fg = "#0A0A0A", bg = "#D9007E", modifiers = ["bold"] }
+
+# Номера строк и gutter
+"ui.linenr" = { fg = "#2E2E2E" }
+"ui.linenr.selected" = { fg = "#FF4FA3", modifiers = ["bold"] }
+"ui.gutter" = { bg = "#0A0A0A" }
+"ui.gutter.selected" = { bg = "#2E2E2E" }
+
+# Виртуальный текст и подсказки
+"ui.virtual" = { fg = "#2E2E2E" }
+"ui.virtual.ruler" = { bg = "#2E2E2E" }
+"ui.virtual.whitespace" = { fg = "#6A0D45" }
+"ui.virtual.wrap" = { fg = "#4A0D30" }
+"ui.virtual.indent-guide" = { fg = "#6A0D45" }
+"ui.virtual.inlay-hint" = { fg = "#BFBFBF", bg = "#2E2E2E" }
+"ui.virtual.inlay-hint.parameter" = { fg = "#F7C6D9", bg = "#2E2E2E", modifiers = ["italic"] }
+"ui.virtual.inlay-hint.type" = { fg = "#D9007E", bg = "#2E2E2E" }
+"ui.virtual.jump-label" = { fg = "#0A0A0A", bg = "#FF007F", modifiers = ["bold"] }
+
+# Окна и панели
+"ui.window" = { fg = "#6A0D45" }
+"ui.window.title" = { fg = "#FF4FA3", modifiers = ["bold"] }
+
+# Popup, меню и всплывающие окна
+"ui.popup" = { fg = "#F7C6D9", bg = "#2E2E2E" }
+"ui.popup.info" = { fg = "#F7C6D9", bg = "#2E2E2E" }
+"ui.picker" = { fg = "#F7C6D9", bg = "#2E2E2E" }
+"ui.picker.header" = { fg = "#FF4FA3", bg = "#6A0D45", modifiers = ["bold"] }
+"ui.picker.header.column" = { fg = "#F7C6D9", modifiers = ["bold"] }
+"ui.picker.header.column.active" = { fg = "#FF007F", modifiers = ["bold"] }
+"ui.menu" = { fg = "#F7C6D9", bg = "#2E2E2E" }
+"ui.menu.selected" = { fg = "#0A0A0A", bg = "#FF007F" }
+"ui.menu.scroll" = { fg = "#FF4FA3" }
+
+# Помощь
+"ui.help" = { fg = "#F7C6D9", bg = "#2E2E2E" }
+
+# Bufferline (табы с открытыми файлами)
+"ui.bufferline" = { fg = "#BFBFBF", bg = "#2E2E2E" }
+"ui.bufferline.active" = { fg = "#0A0A0A", bg = "#FF4FA3", modifiers = ["bold"] }
+"ui.bufferline.background" = { bg = "#0A0A0A" }
+
+# Debug
+"ui.debug.breakpoint" = { fg = "#FF007F", bg = "#6A0D45" }
+"ui.debug.active" = { fg = "#FF4FA3", modifiers = ["bold"] }
+
+# Текст
+"ui.text" = { fg = "#F7C6D9" }
+"ui.text.focus" = { fg = "#FF4FA3", modifiers = ["bold"] }
+"ui.text.inactive" = { fg = "#BFBFBF" }
+"ui.text.info" = { fg = "#D9007E" }
+
+# =============================================================================
+# ДИАГНОСТИКА — ИСПРАВЛЕНО: каждый уровень свой уникальный цвет
+# =============================================================================
+"error"   = { fg = "#FF3355", modifiers = ["bold"] }   # Красный неон
+"warning" = { fg = "#FF8C00", modifiers = ["bold"] }   # Оранжевый неон
+"info"    = { fg = "#00BFFF" }                          # Голубой неон
+"hint"    = { fg = "#888888" }                          # Серый
+
+"diagnostic.error"       = { underline = { color = "#FF3355", style = "curl" } }
+"diagnostic.warning"     = { underline = { color = "#FF8C00", style = "curl" } }
+"diagnostic.info"        = { underline = { color = "#00BFFF", style = "curl" } }
+"diagnostic.hint"        = { underline = { color = "#888888", style = "curl" } }
+"diagnostic.unnecessary" = { modifiers = ["dim"] }
+"diagnostic.deprecated"  = { modifiers = ["crossed_out"] }
+
+# =============================================================================
+# DIFF И GIT — ИСПРАВЛЕНО: зелёный/красный/оранжевый вместо розовых оттенков
+# =============================================================================
+"diff.plus"        = { fg = "#39FF14" }   # Зелёный неон
+"diff.plus.gutter" = "#39FF14"
+"diff.minus"       = { fg = "#FF3355" }   # Красный неон
+"diff.minus.gutter" = "#FF3355"
+"diff.delta"       = { fg = "#FF8C00" }   # Оранжевый неон
+"diff.delta.gutter" = "#FF8C00"
+
+"git.delta.moved" = "#FF8C00"
+"git.added"       = "#39FF14"
+"git.deleted"     = "#FF3355"
+"git.modified"    = "#FF4FA3"
+"git.conflict"    = "#FFD700"
+"git.renamed"     = "#00BFFF"
+
+# =============================================================================
+# СИНТАКСИС
+# =============================================================================
+
+"comment" = { fg = "#BFBFBF", modifiers = ["italic"] }
+"comment.block.documentation" = { fg = "#F7C6D9", modifiers = ["italic"] }
+
+"constant" = { fg = "#FF007F" }
+"constant.builtin" = { fg = "#D9007E", modifiers = ["bold"] }
+"constant.builtin.boolean" = { fg = "#FF007F" }
+"constant.builtin.char" = { fg = "#F7C6D9" }
+"constant.character" = { fg = "#F7C6D9" }
+"constant.character.escape" = { fg = "#FF4FA3", modifiers = ["bold"] }
+"constant.macro" = { fg = "#C71585" }
+
+# Числа — ИСПРАВЛЕНО: каждый тип своим цветом
+"constant.numeric"         = { fg = "#FF007F" }          # Базовый — розовый
+"constant.numeric.integer" = { fg = "#FF007F" }          # Integer — неоновый розовый
+"constant.numeric.float"   = { fg = "#FFD700" }          # Float — золотой
+"constant.numeric.bin"     = { fg = "#39FF14" }          # Binary — зелёный неон
+"constant.numeric.hex"     = { fg = "#FF6600" }          # Hex — оранжевый
+"constant.numeric.oct"     = { fg = "#00BFFF" }          # Octal — голубой
+
+"string" = { fg = "#F7C6D9" }
+"string.regexp" = { fg = "#FF4FA3" }
+"string.special" = { fg = "#D9007E" }
+"string.special.path" = { fg = "#FF69B4" }
+"string.special.symbol" = { fg = "#FF007F" }
+"string.special.url" = { fg = "#D9007E", modifiers = ["underlined"] }
+"string.special.key" = { fg = "#C71585" }
+
+"character" = { fg = "#F7C6D9" }
+"character.special" = { fg = "#FF4FA3" }
+
+"variable" = { fg = "#BFBFBF" }
+"variable.builtin" = { fg = "#D9007E" }
+"variable.parameter" = { fg = "#F7C6D9", modifiers = ["italic"] }
+"variable.parameter.builtin" = { fg = "#FF69B4", modifiers = ["italic"] }
+"variable.other" = { fg = "#BFBFBF" }
+"variable.other.member" = { fg = "#FF4FA3" }
+"variable.other.field" = { fg = "#FF4FA3" }
+"variable.other.enummember" = { fg = "#F7C6D9" }
+
+"label" = { fg = "#FF007F" }
+
+"punctuation" = { fg = "#2E2E2E" }
+"punctuation.delimiter" = { fg = "#6A0D45" }
+"punctuation.bracket" = { fg = "#BFBFBF" }
+"punctuation.special" = { fg = "#FF4FA3" }
+
+"keyword" = { fg = "#FF007F", modifiers = ["bold"] }
+"keyword.control" = { fg = "#FF007F", modifiers = ["bold"] }
+"keyword.control.conditional" = { fg = "#D9007E", modifiers = ["bold"] }
+"keyword.control.repeat" = { fg = "#D9007E", modifiers = ["bold"] }
+"keyword.control.loop" = { fg = "#D9007E", modifiers = ["bold"] }
+"keyword.control.import" = { fg = "#FF4FA3" }
+"keyword.control.export" = { fg = "#FF4FA3" }
+"keyword.control.return" = { fg = "#FF007F", modifiers = ["bold"] }
+"keyword.control.exception" = { fg = "#FF007F" }
+"keyword.control.try" = { fg = "#E0115F" }
+"keyword.control.catch" = { fg = "#E0115F" }
+"keyword.control.finally" = { fg = "#E0115F" }
+"keyword.operator" = { fg = "#FF4FA3" }
+"keyword.directive" = { fg = "#D9007E" }
+"keyword.directive.define" = { fg = "#C71585" }
+"keyword.function" = { fg = "#FF007F" }
+"keyword.storage" = { fg = "#D9007E" }
+"keyword.storage.type" = { fg = "#D9007E" }
+"keyword.storage.modifier" = { fg = "#6A0D45" }
+"keyword.storage.modifier.mut" = { fg = "#8B0A50" }
+"keyword.storage.modifier.ref" = { fg = "#7F1852" }
+"keyword.other" = { fg = "#FF007F" }
+
+"operator" = { fg = "#FF4FA3" }
+
+# Функции — ИСПРАВЛЕНО: обычные розовые, builtin фиолетовые, method голубые
+"function"             = { fg = "#FF007F" }                          # Обычная — розовый
+"function.builtin"     = { fg = "#AA44FF" }                          # Встроенная — фиолетовый неон
+"function.call"        = { fg = "#FF4FA3" }                          # Вызов — чуть светлее
+"function.method"      = { fg = "#00BFFF" }                          # Метод — голубой
+"function.method.call" = { fg = "#00BFFF" }                          # Вызов метода — голубой
+"function.macro"       = { fg = "#FF69B4" }                          # Макрос — светло-розовый
+"function.special"     = { fg = "#FFD700", modifiers = ["bold"] }    # Специальная — золотой
+"function.declaration" = { fg = "#FF1493", modifiers = ["bold"] }    # Объявление — ярко-розовый
+
+"tag" = { fg = "#FF007F" }
+"tag.builtin" = { fg = "#D9007E" }
+"tag.attribute" = { fg = "#FF4FA3" }
+"tag.delimiter" = { fg = "#BFBFBF" }
+
+"namespace" = { fg = "#D9007E" }
+"module" = { fg = "#C71585" }
+
+"special" = { fg = "#FF4FA3" }
+
+# Типы — ИСПРАВЛЕНО: builtin фиолетовый, чтобы не сливался с function
+"type"             = { fg = "#D9007E" }
+"type.builtin"     = { fg = "#AA44FF" }                 # Фиолетовый — отличается от type
+"type.definition"  = { fg = "#C71585" }
+"type.qualifier"   = { fg = "#8B0A50" }
+"type.enum"        = { fg = "#E0115F" }
+"type.enum.variant" = { fg = "#F7C6D9" }
+"type.parameter"   = { fg = "#FF69B4", modifiers = ["italic"] }
+
+"constructor" = { fg = "#FF007F" }
+
+"interface" = { fg = "#FF1493" }
+"struct" = { fg = "#C71585" }
+"enum" = { fg = "#E0115F" }
+"union" = { fg = "#8B0A50" }
+
+"attribute" = { fg = "#F7C6D9" }
+"attribute.builtin" = { fg = "#D9007E" }
+
+"property" = { fg = "#FF4FA3" }
+
+# Markup (Markdown, etc.)
+"markup.heading" = { fg = "#FF007F", modifiers = ["bold"] }
+"markup.heading.1" = { fg = "#FF007F", modifiers = ["bold"] }
+"markup.heading.2" = { fg = "#D9007E", modifiers = ["bold"] }
+"markup.heading.3" = { fg = "#FF4FA3", modifiers = ["bold"] }
+"markup.heading.4" = { fg = "#F7C6D9", modifiers = ["bold"] }
+"markup.heading.5" = { fg = "#BFBFBF", modifiers = ["bold"] }
+"markup.heading.6" = { fg = "#2E2E2E", modifiers = ["bold"] }
+"markup.heading.marker" = { fg = "#6A0D45" }
+
+"markup.list" = { fg = "#FF4FA3" }
+"markup.list.unnumbered" = { fg = "#FF4FA3" }
+"markup.list.numbered" = { fg = "#D9007E" }
+"markup.list.checked" = { fg = "#39FF14" }     # Зелёный — галочка выполнена
+"markup.list.unchecked" = { fg = "#BFBFBF" }
+
+"markup.bold" = { modifiers = ["bold"] }
+"markup.italic" = { modifiers = ["italic"] }
+"markup.strikethrough" = { modifiers = ["crossed_out"] }
+
+"markup.link" = { fg = "#D9007E", modifiers = ["underlined"] }
+"markup.link.url" = { fg = "#F7C6D9", modifiers = ["underlined"] }
+"markup.link.text" = { fg = "#FF007F" }
+"markup.link.label" = { fg = "#FF4FA3" }
+
+"markup.quote" = { fg = "#BFBFBF", modifiers = ["italic"] }
+
+"markup.raw" = { fg = "#F7C6D9" }
+"markup.raw.inline" = { fg = "#D9007E", bg = "#2E2E2E" }
+"markup.raw.block" = { fg = "#F7C6D9", bg = "#2E2E2E" }
+
+# =============================================================================
+# LANGUAGE-SPECIFIC HIGHLIGHTING
+# =============================================================================
+
+"attribute.rust" = { fg = "#F7C6D9" }
+"lifetime.rust" = { fg = "#FF69B4", modifiers = ["italic"] }
+"macro.rust" = { fg = "#FF4FA3", modifiers = ["bold"] }
+
+"decorator.python" = { fg = "#D9007E" }
+"self.python" = { fg = "#FF007F", modifiers = ["italic"] }
+
+"this.javascript" = { fg = "#FF007F", modifiers = ["italic"] }
+"this.typescript" = { fg = "#FF007F", modifiers = ["italic"] }
+"jsx.tag" = { fg = "#FF007F" }
+"jsx.attribute" = { fg = "#FF4FA3" }
+
+"selector.css" = { fg = "#FF007F" }
+"property.css" = { fg = "#FF4FA3" }
+"pseudo-class.css" = { fg = "#D9007E" }
+"pseudo-element.css" = { fg = "#C71585" }
+
+"entity.name.tag.html" = { fg = "#FF007F" }
+"entity.other.attribute-name.html" = { fg = "#FF4FA3" }
+
+"key.json" = { fg = "#FF4FA3" }
+"key.yaml" = { fg = "#FF4FA3" }
+"anchor.yaml" = { fg = "#D9007E" }
+
+"table.toml" = { fg = "#FF007F", modifiers = ["bold"] }
+"key.toml" = { fg = "#FF4FA3" }
+
+"keyword.sql" = { fg = "#FF007F", modifiers = ["bold"] }
+"function.builtin.sql" = { fg = "#AA44FF" }    # Фиолетовый (согласованно с function.builtin)
+
+"regex.character-class" = { fg = "#FF4FA3" }
+"regex.quantifier" = { fg = "#D9007E" }
+"regex.anchor" = { fg = "#FF007F" }
+
+"builtin.bash" = { fg = "#AA44FF" }
+"variable.bash" = { fg = "#FF4FA3" }
+"command.bash" = { fg = "#FF007F" }
+
+"package.go" = { fg = "#D9007E" }
+"type.go" = { fg = "#C71585" }
+
+"preprocessor.c" = { fg = "#D9007E" }
+"preprocessor.cpp" = { fg = "#D9007E" }
+"macro.c" = { fg = "#FF4FA3" }
+"macro.cpp" = { fg = "#FF4FA3" }
+
+# =============================================================================
+# SEMANTIC TOKENS (LSP)
+# =============================================================================
+
+"semantic.type"          = { fg = "#D9007E" }
+"semantic.class"         = { fg = "#C71585" }
+"semantic.enum"          = { fg = "#E0115F" }
+"semantic.interface"     = { fg = "#FF1493" }
+"semantic.struct"        = { fg = "#C71585" }
+"semantic.typeParameter" = { fg = "#FF69B4", modifiers = ["italic"] }
+"semantic.parameter"     = { fg = "#F7C6D9", modifiers = ["italic"] }
+"semantic.variable"      = { fg = "#BFBFBF" }
+"semantic.property"      = { fg = "#FF4FA3" }
+"semantic.enumMember"    = { fg = "#F7C6D9" }
+"semantic.event"         = { fg = "#FF007F" }
+"semantic.function"      = { fg = "#FF007F" }
+"semantic.method"        = { fg = "#00BFFF" }   # Голубой — согласованно с function.method
+"semantic.macro"         = { fg = "#FF4FA3" }
+"semantic.keyword"       = { fg = "#FF007F", modifiers = ["bold"] }
+"semantic.modifier"      = { fg = "#8B0A50" }
+"semantic.comment"       = { fg = "#BFBFBF", modifiers = ["italic"] }
+"semantic.string"        = { fg = "#F7C6D9" }
+"semantic.number"        = { fg = "#FF007F" }
+"semantic.regexp"        = { fg = "#FF4FA3" }
+"semantic.operator"      = { fg = "#FF4FA3" }
+"semantic.decorator"     = { fg = "#D9007E" }
+"semantic.namespace"     = { fg = "#D9007E" }
+
+# =============================================================================
+# ДОПОЛНИТЕЛЬНЫЕ СПЕЦИАЛЬНЫЕ ЭЛЕМЕНТЫ
+# =============================================================================
+
+"identifier.constant" = { fg = "#FF007F", modifiers = ["bold"] }
+"identifier.function" = { fg = "#FF007F" }
+"identifier.variable" = { fg = "#BFBFBF" }
+
+"escape" = { fg = "#FF4FA3", modifiers = ["bold"] }
+"escape.unicode" = { fg = "#D9007E", modifiers = ["bold"] }
+
+"builtin"          = { fg = "#AA44FF" }   # Фиолетовый — согласованно
+"builtin.type"     = { fg = "#AA44FF" }
+"builtin.function" = { fg = "#AA44FF" }
+"builtin.variable" = { fg = "#D9007E" }
+
+"annotation" = { fg = "#F7C6D9" }
+"meta" = { fg = "#8B0A50" }
+
+"pointer"   = { fg = "#FF007F" }
+"reference" = { fg = "#D9007E" }
+
+"embedded" = { fg = "#FF69B4" }
+"conceal"  = { fg = "#4A0D30" }
+
+"text"               = { fg = "#F7C6D9" }
+"text.strong"        = { modifiers = ["bold"] }
+"text.emphasis"      = { modifiers = ["italic"] }
+"text.underline"     = { modifiers = ["underlined"] }
+"text.strike"        = { modifiers = ["crossed_out"] }
+"text.title"         = { fg = "#FF007F", modifiers = ["bold"] }
+"text.literal"       = { fg = "#D9007E" }
+"text.uri"           = { fg = "#D9007E", modifiers = ["underlined"] }
+"text.math"          = { fg = "#FF4FA3" }
+"text.reference"     = { fg = "#F7C6D9" }
+"text.environment"   = { fg = "#8B0A50" }
+"text.environment.name" = { fg = "#C71585" }
+
+"underline"     = { sp = "#FF4FA3", modifiers = ["underlined"] }
+"strikethrough" = { sp = "#6A0D45", modifiers = ["crossed_out"] }
+"spell"         = { sp = "#D9007E", modifiers = ["undercurl"] }

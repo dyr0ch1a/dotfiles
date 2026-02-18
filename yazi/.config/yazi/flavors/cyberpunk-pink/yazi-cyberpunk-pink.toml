@@ -1,0 +1,160 @@
+# Cyberpunk Pink Theme for Yazi
+# Based on pink-purple-black cyberpunk palette
+
+[flavor]
+use = ""
+
+[manager]
+# Основные цвета интерфейса
+cwd = { fg = "#FF4FA3", bold = true }
+hovered = { fg = "#0A0A0A", bg = "#FF007F" }
+preview_hovered = { fg = "#0A0A0A", bg = "#D9007E" }
+
+# Поиск и выделение
+find_keyword = { fg = "#0A0A0A", bg = "#FF4FA3", bold = true }
+find_position = { fg = "#F7C6D9", bg = "#2E2E2E", italic = true }
+
+# Маркеры
+marker_selected = { fg = "#FF007F", bg = "#FF007F" }
+marker_copied = { fg = "#D9007E", bg = "#D9007E" }
+marker_cut = { fg = "#6A0D45", bg = "#6A0D45" }
+
+# Табы
+tab_active = { fg = "#0A0A0A", bg = "#FF4FA3", bold = true }
+tab_inactive = { fg = "#BFBFBF", bg = "#2E2E2E" }
+tab_width = 1
+
+# Границы и разделители
+border_symbol = "│"
+border_style = { fg = "#6A0D45" }
+
+# Синтаксис в превью
+syntect_theme = ""
+
+[status]
+separator_open = ""
+separator_close = ""
+separator_style = { fg = "#6A0D45", bg = "#6A0D45" }
+
+# Режим
+mode_normal = { fg = "#0A0A0A", bg = "#FF4FA3", bold = true }
+mode_select = { fg = "#0A0A0A", bg = "#FF007F", bold = true }
+mode_unset = { fg = "#0A0A0A", bg = "#D9007E", bold = true }
+
+# Прогресс
+progress_label = { fg = "#FF4FA3", bold = true }
+progress_normal = { fg = "#FF4FA3", bg = "#2E2E2E" }
+progress_error = { fg = "#FF007F", bg = "#2E2E2E" }
+
+# Права доступа
+permissions_t = { fg = "#FF007F" }
+permissions_r = { fg = "#FF4FA3" }
+permissions_w = { fg = "#D9007E" }
+permissions_x = { fg = "#F7C6D9" }
+permissions_s = { fg = "#6A0D45" }
+
+[select]
+border = { fg = "#FF4FA3" }
+active = { fg = "#0A0A0A", bg = "#FF007F" }
+inactive = { fg = "#BFBFBF" }
+
+[input]
+border = { fg = "#FF4FA3" }
+title = { fg = "#FF4FA3" }
+value = { fg = "#F7C6D9" }
+selected = { fg = "#0A0A0A", bg = "#D9007E" }
+
+[completion]
+border = { fg = "#6A0D45" }
+active = { fg = "#0A0A0A", bg = "#FF007F" }
+inactive = { fg = "#BFBFBF" }
+
+[tasks]
+border = { fg = "#6A0D45" }
+title = { fg = "#FF4FA3" }
+hovered = { fg = "#0A0A0A", bg = "#D9007E" }
+
+[which]
+cols = 3
+mask = { bg = "#0A0A0A" }
+cand = { fg = "#F7C6D9" }
+rest = { fg = "#2E2E2E" }
+desc = { fg = "#BFBFBF" }
+separator = "  "
+separator_style = { fg = "#6A0D45" }
+
+[help]
+on = { fg = "#FF007F" }
+run = { fg = "#D9007E" }
+desc = { fg = "#BFBFBF" }
+hovered = { fg = "#0A0A0A", bg = "#FF4FA3" }
+footer = { fg = "#2E2E2E", bg = "#6A0D45" }
+
+[filetype]
+rules = [
+    # Директории
+    { name = "*/", fg = "#FF4FA3", bold = true },
+    
+    # Исполняемые файлы
+    { name = "*", is = "exec", fg = "#FF007F", bold = true },
+    
+    # Ссылки
+    { name = "*", is = "link", fg = "#D9007E", italic = true },
+    
+    # Изображения
+    { mime = "image/*", fg = "#F7C6D9" },
+    
+    # Видео
+    { mime = "video/*", fg = "#FF4FA3" },
+    
+    # Аудио
+    { mime = "audio/*", fg = "#D9007E" },
+    
+    # Архивы
+    { mime = "application/*zip", fg = "#6A0D45" },
+    { mime = "application/*tar", fg = "#6A0D45" },
+    { mime = "application/*rar", fg = "#6A0D45" },
+    
+    # Документы
+    { mime = "text/*", fg = "#BFBFBF" },
+    { mime = "application/pdf", fg = "#F7C6D9" },
+    
+    # Код
+    { name = "*.rs", fg = "#FF007F" },
+    { name = "*.py", fg = "#FF4FA3" },
+    { name = "*.js", fg = "#D9007E" },
+    { name = "*.ts", fg = "#D9007E" },
+    { name = "*.go", fg = "#FF007F" },
+    { name = "*.c", fg = "#BFBFBF" },
+    { name = "*.cpp", fg = "#BFBFBF" },
+    { name = "*.h", fg = "#2E2E2E" },
+    
+    # Конфиги
+    { name = "*.toml", fg = "#F7C6D9" },
+    { name = "*.yaml", fg = "#F7C6D9" },
+    { name = "*.yml", fg = "#F7C6D9" },
+    { name = "*.json", fg = "#D9007E" },
+    { name = "*.ini", fg = "#BFBFBF" },
+    
+    # Git
+    { name = ".git*", fg = "#6A0D45" },
+    { name = ".gitignore", fg = "#2E2E2E" },
+    
+    # Скрытые файлы
+    { name = ".*", fg = "#2E2E2E" },
+]
+
+[icon]
+rules = [
+    { name = "*/", text = "" },
+    { name = "*", is = "exec", text = "" },
+    { name = "*.rs", text = "" },
+    { name = "*.py", text = "" },
+    { name = "*.js", text = "" },
+    { name = "*.ts", text = "" },
+    { name = "*.md", text = "" },
+    { name = "*.json", text = "" },
+    { name = "*.toml", text = "" },
+    { name = "*.yaml", text = "" },
+    { name = "*.yml", text = "" },
+]

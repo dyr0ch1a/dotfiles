@@ -1,0 +1,35 @@
+[shell]
+program = "fish"
+args = ["-l"]
+
+[mgr]
+sort_dir_first = true
+sort_by_modified = true
+sort_reverse = false
+show_hidden = false
+
+[opener]
+edit = [
+  { run = 'helix "$@"', block = true, desc = "Helix" }
+]
+
+play = [
+  { run = 'mpv --volume=50 "$@"', orphan = true, for = "unix", desc = "MPV" }
+]
+
+image = [
+  { run = 'fim "$@"', block = true, desc = "FIM" }
+]
+
+gif = [
+  { run = 'chafa "$@"', block = true, shell = true, desc = "Chafa gif preview"}
+]
+
+[open]
+rules = [
+  { mime = "image/*", use = "image" },
+  { mime = "video/*", use = "play" },
+  { mime = "text/*", use = "edit" },
+  { name = "*.jsonc", use = "edit" },
+  { name = "*", use = "edit" }
+]

@@ -1,0 +1,166 @@
+ # === Rust ===
+[[language]]
+name = "rust"
+scope = "source.rust"
+injection-regex = "rust"
+file-types = ["rs"]
+roots = ["Cargo.toml"]
+language-servers = ["rust-analyzer"]
+auto-format = true
+
+[language-server.rust-analyzer.config]
+cargo.allFeatures = true       
+check.command = "clippy"
+
+# === Python ===
+[[language]]
+name = "python"
+scope = "source.python"
+injection-regex = "python"
+file-types = ["py", "pyi", "py3", "pyw", ".pythonstartup", ".pythonrc"]
+language-servers = ["pyright"]
+auto-format = true
+
+# === JavaScript ===
+[[language]]
+name = "javascript"
+scope = "source.js"
+injection-regex = "js|javascript"
+file-types = ["js", "jsx", "mjs", "cjs"]
+language-servers = ["biome"]
+auto-format = true
+
+# === TypeScript ===
+[[language]]
+name = "typescript"
+scope = "source.ts"
+injection-regex = "ts|typescript"
+file-types = ["ts", "tsx", "mts", "cts"]
+language-servers = ["biome"]       
+auto-format = true
+
+# === Go ===
+[[language]]
+name = "go"
+language-servers = ["gopls"]
+
+[language-server.gopls]
+command = "gopls"
+
+# === Bash ===
+[[language]]
+name = "bash"
+scope = "source.bash"
+injection-regex = "bash"
+file-types = ["sh", "bash", ".bashrc", ".bash_profile", ".zshrc", ".zshenv"]
+language-servers = ["bash-language-server"]
+
+# === Fortran ===
+[[language]]
+name = "fortran"
+scope = "source.fortran"
+injection-regex = "fortran"
+file-types = ["f", "f77", "f90", "f95", "for"]
+language-servers = ["fortls"]
+
+[language-server.fortls]
+command = "fortls"                
+
+# === JSON ===
+[[language]]
+name = "json"
+scope = "source.json"
+injection-regex = "json"
+file-types = ["json", "jsonc", "json5"]
+language-servers = [
+  { name = "vscode-json-language-server", except-features = ["format"] },
+  "biome"
+]
+auto-format = true
+
+# === Biome ===
+[language-server.biome]
+command = "biome"
+args = ["lsp-proxy"]
+
+# === LaTeX ===
+# [languages.tex]
+# language-server = "texlab"
+# args = []
+
+# === Toml-Rust ===
+[language-server.taplo]
+command = "taplo"
+args = ["lsp", "stdio"]
+
+[[language]]
+name = "toml"
+scope = "source.toml"
+file-types = ["toml", {glob = "Cargo.toml"}]
+roots = ["Cargo.toml", "Cargo.locl"]
+language-servers = ["taplo"]
+auto-format = true
+formatter = {command = "taplo", args = ["fmt", "--stdin"]}
+
+# === Kotlin ===
+[language-server.kotlin]
+command = "kotlin-language-server"
+
+[[language]]
+name = "kotlin"
+scope = "source.kotlin"
+injection-regex = "kotlin"
+file-types = ["kt", "kts"]
+shebangs = ["kotlin"]
+roots = ["settings.gradle", "settings.gradle.kts", "build.gradle", "build.gradle.kts"]
+comment-token = "//"
+language-servers = ["kotlin-language-server"]
+auto-format = true
+indent = { tab-width = 4, unit = "    " }  
+
+# === Lua ===
+[language-server.lua-lsp]
+command = "/home/dyr0ch1a/Data/App/git_cache/Lua-lsp/bin/lua-language-server"
+
+[language-server.lua-language-server.config]
+workspace.library = {}
+workspace.checkThirdParty = false
+
+[[ language ]]
+name = "lua"
+scope = "source.lua"
+language-servers = ["lua-lsp"]
+injection-regex = "lua"
+file-types = ["lua"]
+auto-format = true
+
+# === Markdown ===
+[[language]]
+name = "markdown"
+language-servers = ["md-lsp"]
+
+[language-server.md-lsp]
+command = "marksman"
+
+# === Scheme (Steel) ===
+[[language]]
+name = "scheme"
+language-servers = ["scheme-lsp"]
+
+[language-server.scheme-lsp]
+command = "steel-language-server"
+
+# === Typst ===
+
+[[language]]
+name = "typst"
+scope = "source.typst"
+injection-regex = "typst"
+file-types = ["typ"]
+roots = []
+comment-token = "//"
+language-servers = ["typst-lsp"]
+indent = { tab-width = 2, unit = "  " }
+
+[language-server.typst-lsp]
+command = "typst-lsp"

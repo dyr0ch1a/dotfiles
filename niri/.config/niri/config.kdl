@@ -1,0 +1,6 @@
+include "modules/input.kdl"
+include "modules/binds.kdl"
+include "modules/startup.kdl"
+include "modules/style.kdl"
+include "modules/scroll_mod.kdl"
+include "modules/env.kdl"

@@ -1,0 +1,4 @@
+[[manager.prepend_keymap]]
+on  = ["!"]
+run = 'shell "$TERMINAL"'
+desc = "Open shell in current dir"

@@ -1,0 +1,5 @@
+# This file contains fish universal variable definitions.
+# VERSION: 3.0
+SETUVAR --export HYPRSHOT_DIR:/mnt/data/Pictures/Screen/
+SETUVAR __fish_initialized:4300
+SETUVAR --export fish_user_paths:/home/dyr0ch1a/Data/App/git_cache/eww/target/release\x1e/home/dyr0ch1a/go/bin\x1e/home/dyr0ch1a/Data/App/git_cache/scheme\x2dlsp\x1e/home/dyr0ch1a/\x2elocal/bin\x1e/home/dyr0ch1a/Data/App/git_cache/Lua\x2dlsp/bin\x1e/home/dyr0ch1a/Data/App/Manual/marksman\x1e/home/dyr0ch1a/Data/App/Manual/marksman/marksman\x2dlinux\x2dx64\x1e/home/dyr0ch1a/Data/App/git_cache/kotlin\x2dlsp

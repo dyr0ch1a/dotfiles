@@ -1,0 +1,78 @@
+window {
+    margin: 0px;
+    background-color: rgba(26, 27, 38, 0.95);
+}
+
+* {
+    font-family: "JetBrains Mono";
+    color: #a9b1d6;
+}
+
+#input {
+    margin: 8px;
+    padding: 12px;
+    background-color: #24283b;
+    color: #c0caf5;
+    border: none;
+    border-radius: 8px;
+}
+
+#inner-box {
+    margin: 8px 8px 0 8px;
+    padding: 6px 0;
+}
+
+#outer-box {
+    margin: 8px;
+}
+
+/* Основные пункты */
+#entry {
+    padding: 12px 14px;
+    margin: 4px 10px;
+    border-radius: 10px;
+    border-bottom: 1px solid #31354a80;   /* полупрозрачный разделитель */
+    min-height: 32px;
+}
+
+/* Иконка и текст — добавляем нормальный отступ */
+#img {
+    margin-right: 14px;         /* ← вот тут расстояние между иконкой и текстом */
+}
+
+#text {
+    margin-left: 6px;
+}
+
+/* Последний пункт без линии */
+#entry:last-child {
+    border-bottom: none;
+}
+
+/* Спокойное, но чёткое выделение — текст всегда читается */
+#entry:selected {
+    background-color: #3b4261;           /* тёмно-синий, не режет глаза */
+    color: #c0caf5;                      /* светлый текст вместо чёрного */
+    font-weight: 600;
+    /* чуть жирнее, но не bold */
+    border-bottom: none;
+}
+
+/* При наведении (не selected) — лёгкая подсветка */
+#entry:hover:not(:selected) {
+    background-color: #2f3449;
+}
+
+/* Скроллбар оставил салатовый, но потише */
+scrollbar {
+    width: 9px;
+}
+scrollbar slider {
+    background-color: #89b4fa66;         /* полупрозрачный синий вместо салатового */
+    border-radius: 10px;
+    border: none;
+    margin: 2px;
+}
+scrollbar slider:hover {
+    background-color: #89b4facc;
+}

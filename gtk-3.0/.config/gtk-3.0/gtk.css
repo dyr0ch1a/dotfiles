@@ -1,0 +1,775 @@
+/*
+ * Cyberpunk Pink GTK3 Theme (Improved)
+ * Улучшенная версия с лучшей читаемостью и цветовой гармонией
+ */
+
+/* =============================================================================
+ * ЦВЕТОВАЯ ПАЛИТРА (ПЕРЕРАБОТАННАЯ)
+ * =============================================================================
+ * Основные:
+ *   #0F0F0F - Чёрный фон
+ *   #E8E8E8 - Светлый текст (высокий контраст)
+ *   #1A1A1A - Серый для элементов
+ *
+ * Акценты (розово-пурпурные):
+ *   #D946EF - Яркий пурпур (основной акцент)
+ *   #EC4899 - Розовый (активные элементы)
+ *   #BE185D - Тёмный розовый (hover)
+ *
+ * Вспомогательные:
+ *   #404040 - Серый для границ
+ *   #666666 - Серый для неактивных элементов
+ *   #999999 - Светлый серый
+ */
+
+@define-color theme_bg_color #0F0F0F;
+@define-color theme_fg_color #E8E8E8;
+@define-color theme_base_color #1A1A1A;
+@define-color theme_text_color #E8E8E8;
+@define-color theme_selected_bg_color #D946EF;
+@define-color theme_selected_fg_color #0F0F0F;
+@define-color insensitive_bg_color #262626;
+@define-color insensitive_fg_color #666666;
+@define-color insensitive_base_color #1A1A1A;
+@define-color borders #404040;
+@define-color link_color #EC4899;
+@define-color success_color #10B981;
+@define-color warning_color #F59E0B;
+@define-color error_color #EF4444;
+
+/* =============================================================================
+ * ОСНОВНЫЕ ЭЛЕМЕНТЫ
+ * ============================================================================= */
+
+* {
+    background-clip: padding-box;
+    -GtkToolButton-icon-spacing: 4;
+    -GtkTextView-error-underline-color: #EF4444;
+    -GtkScrolledWindow-scrollbar-spacing: 0;
+    -GtkToolItemGroup-expander-size: 11;
+    -GtkWidget-focus-padding: 2;
+    -GtkWidget-focus-line-width: 2;
+    -GtkExpander-expander-size: 16;
+    -GtkTreeView-expander-size: 11;
+    -GtkTreeView-horizontal-separator: 4;
+    outline-color: rgba(217, 70, 239, 0.5);
+    outline-style: solid;
+    outline-offset: -2px;
+    outline-width: 2px;
+}
+
+/* Основной фон окна */
+window {
+    background-color: #0F0F0F;
+    color: #E8E8E8;
+}
+
+/* Фон приложения */
+.background {
+    background-color: #0F0F0F;
+    color: #E8E8E8;
+}
+
+/* Текстовые поля */
+.view,
+textview text,
+textview {
+    background-color: #1A1A1A;
+    color: #E8E8E8;
+}
+
+.view:selected,
+textview text:selected,
+textview:selected {
+    background-color: #D946EF;
+    color: #0F0F0F;
+}
+
+/* =============================================================================
+ * ЗАГОЛОВКИ И TITLEBAR
+ * ============================================================================= */
+
+headerbar,
+.titlebar {
+    background-image: linear-gradient(to bottom, #1A1A1A, #0F0F0F);
+    color: #E8E8E8;
+    border-bottom: 1px solid #EC4899;
+    box-shadow: inset 0 1px rgba(236, 72, 153, 0.2);
+}
+
+headerbar:backdrop,
+.titlebar:backdrop {
+    background-image: linear-gradient(to bottom, #262626, #1A1A1A);
+    color: #999999;
+}
+
+headerbar .title {
+    color: #EC4899;
+    font-weight: bold;
+}
+
+headerbar .subtitle {
+    color: #E8E8E8;
+    font-size: smaller;
+}
+
+/* =============================================================================
+ * КНОПКИ
+ * ============================================================================= */
+
+button {
+    background-image: linear-gradient(to bottom, #262626, #1A1A1A);
+    color: #E8E8E8;
+    border: 1px solid #404040;
+    border-radius: 3px;
+    padding: 5px 10px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+button:hover {
+    background-image: linear-gradient(to bottom, #333333, #262626);
+    border-color: #EC4899;
+    box-shadow: 0 2px 4px rgba(236, 72, 153, 0.2);
+    color: #E8E8E8;
+}
+
+button:active,
+button:checked {
+    background-image: linear-gradient(to bottom, #1A1A1A, #262626);
+    border-color: #D946EF;
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.5);
+    color: #E8E8E8;
+}
+
+button:disabled {
+    background-image: linear-gradient(to bottom, #1A1A1A, #0F0F0F);
+    color: #666666;
+    border-color: #404040;
+}
+
+/* Кнопки в заголовке */
+headerbar button,
+.titlebar button {
+    background-image: linear-gradient(to bottom, rgba(236, 72, 153, 0.1), rgba(217, 70, 239, 0.15));
+    border-color: rgba(236, 72, 153, 0.3);
+}
+
+headerbar button:hover,
+.titlebar button:hover {
+    background-image: linear-gradient(to bottom, rgba(236, 72, 153, 0.2), rgba(217, 70, 239, 0.3));
+    border-color: #EC4899;
+    color: #E8E8E8;
+}
+
+/* Suggested/Destructive buttons */
+.suggested-action {
+    background-image: linear-gradient(to bottom, #D946EF, #BE185D);
+    color: #0F0F0F;
+    border-color: #EC4899;
+}
+
+.suggested-action:hover {
+    background-image: linear-gradient(to bottom, #E879F9, #D946EF);
+    color: #0F0F0F;
+}
+
+.destructive-action {
+    background-image: linear-gradient(to bottom, #EF4444, #DC2626);
+    color: #FFFFFF;
+    border-color: #B91C1C;
+}
+
+/* =============================================================================
+ * ПОЛЯ ВВОДА
+ * ============================================================================= */
+
+entry {
+    background-color: #1A1A1A;
+    color: #E8E8E8;
+    border: 1px solid #404040;
+    border-radius: 3px;
+    padding: 5px 8px;
+}
+
+entry:focus {
+    background-color: #262626;
+    border-color: #EC4899;
+    box-shadow: 0 0 0 1px rgba(236, 72, 153, 0.3);
+}
+
+entry:disabled {
+    background-color: #0F0F0F;
+    color: #666666;
+    border-color: #404040;
+}
+
+entry selection {
+    background-color: #D946EF;
+    color: #0F0F0F;
+}
+
+/* =============================================================================
+ * SIDEBAR (БОКОВАЯ ПАНЕЛЬ)
+ * ============================================================================= */
+
+.sidebar {
+    background-color: #1A1A1A;
+    border-right: 1px solid #404040;
+}
+
+.sidebar row {
+    padding: 5px;
+}
+
+.sidebar row:selected {
+    background-color: #262626;
+    color: #EC4899;
+}
+
+.sidebar row:hover {
+    background-color: #262626;
+}
+
+/* Элементы в sidebar */
+.sidebar .view,
+.sidebar textview text {
+    background-color: transparent;
+    color: #E8E8E8;
+}
+
+.sidebar .view:selected,
+.sidebar textview text:selected {
+    background-color: #D946EF;
+    color: #0F0F0F;
+}
+
+/* =============================================================================
+ * СПИСКИ И ПРЕДСТАВЛЕНИЯ
+ * ============================================================================= */
+
+list {
+    background-color: #1A1A1A;
+    color: #E8E8E8;
+    border: 1px solid #404040;
+}
+
+list row {
+    padding: 5px;
+}
+
+list row:hover {
+    background-color: #262626;
+}
+
+list row:selected {
+    background-color: #2D2D4D;
+    color: #EC4899;
+}
+
+list row:selected:focus {
+    background-color: #3D3D5D;
+    color: #D946EF;
+}
+
+/* =============================================================================
+ * TREEVIEW (ДРЕВОВИДНОЕ ПРЕДСТАВЛЕНИЕ)
+ * ============================================================================= */
+
+treeview {
+    background-color: #1A1A1A;
+    color: #E8E8E8;
+}
+
+treeview:selected {
+    background-color: #2D2D4D;
+    color: #EC4899;
+}
+
+treeview:selected:focus {
+    background-color: #3D3D5D;
+    color: #D946EF;
+}
+
+treeview header button {
+    background-image: linear-gradient(to bottom, #262626, #1A1A1A);
+    color: #E8E8E8;
+    border: 1px solid #404040;
+    font-weight: bold;
+}
+
+treeview header button:hover {
+    background-image: linear-gradient(to bottom, #333333, #262626);
+    color: #EC4899;
+}
+
+/* =============================================================================
+ * SCROLLBARS (ПОЛОСЫ ПРОКРУТКИ)
+ * ============================================================================= */
+
+scrollbar {
+    background-color: #1A1A1A;
+    border: 1px solid #404040;
+}
+
+scrollbar slider {
+    background-color: #404040;
+    border-radius: 10px;
+    min-width: 10px;
+    min-height: 10px;
+}
+
+scrollbar slider:hover {
+    background-color: #666666;
+}
+
+scrollbar slider:active {
+    background-color: #EC4899;
+}
+
+scrollbar.horizontal slider {
+    min-width: 40px;
+}
+
+scrollbar.vertical slider {
+    min-height: 40px;
+}
+
+/* =============================================================================
+ * МЕНЮ
+ * ============================================================================= */
+
+menubar {
+    background-color: #1A1A1A;
+    color: #E8E8E8;
+    border-bottom: 1px solid #404040;
+}
+
+menubar > menuitem {
+    padding: 5px 10px;
+}
+
+menubar > menuitem:hover {
+    background-color: #262626;
+    color: #EC4899;
+}
+
+menu {
+    background-color: #1A1A1A;
+    color: #E8E8E8;
+    border: 1px solid #404040;
+    padding: 2px;
+}
+
+menu menuitem {
+    padding: 5px 10px;
+}
+
+menu menuitem:hover {
+    background-color: #262626;
+    color: #EC4899;
+}
+
+menu separator {
+    background-color: #404040;
+    min-height: 1px;
+    margin: 2px 0;
+}
+
+/* =============================================================================
+ * CONTEXT MENU (КОНТЕКСТНОЕ МЕНЮ)
+ * ============================================================================= */
+
+.context-menu {
+    background-color: #1A1A1A;
+    border: 1px solid #404040;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+/* =============================================================================
+ * NOTEBOOK (ВКЛАДКИ)
+ * ============================================================================= */
+
+notebook {
+    background-color: #1A1A1A;
+}
+
+notebook header {
+    background-color: #0F0F0F;
+    border-bottom: 2px solid #404040;
+}
+
+notebook tab {
+    background-image: linear-gradient(to bottom, #262626, #1A1A1A);
+    color: #999999;
+    border: 1px solid #404040;
+    border-bottom: none;
+    padding: 5px 15px;
+    margin: 0 1px;
+}
+
+notebook tab:hover {
+    background-image: linear-gradient(to bottom, #333333, #262626);
+    color: #E8E8E8;
+}
+
+notebook tab:checked {
+    background-image: linear-gradient(to bottom, #404040, #333333);
+    color: #EC4899;
+    border-color: #EC4899;
+    border-bottom: 2px solid #EC4899;
+    font-weight: bold;
+}
+
+/* =============================================================================
+ * TOOLBAR (ПАНЕЛЬ ИНСТРУМЕНТОВ)
+ * ============================================================================= */
+
+toolbar {
+    background-image: linear-gradient(to bottom, #1A1A1A, #0F0F0F);
+    color: #E8E8E8;
+    border-bottom: 1px solid #404040;
+    padding: 3px;
+}
+
+toolbar button {
+    background-color: transparent;
+    border: 1px solid transparent;
+}
+
+toolbar button:hover {
+    background-color: #262626;
+    border-color: #EC4899;
+}
+
+toolbar separator {
+    background-color: #404040;
+    min-width: 1px;
+    margin: 0 3px;
+}
+
+/* =============================================================================
+ * PATHBAR (ПАНЕЛЬ ПУТИ)
+ * ============================================================================= */
+
+.path-bar button {
+    background-image: linear-gradient(to bottom, #262626, #1A1A1A);
+    color: #E8E8E8;
+    border: 1px solid #404040;
+    border-radius: 0;
+    padding: 3px 8px;
+}
+
+.path-bar button:hover {
+    background-image: linear-gradient(to bottom, #333333, #262626);
+    color: #EC4899;
+}
+
+.path-bar button:checked {
+    background-image: linear-gradient(to bottom, #D946EF, #BE185D);
+    color: #0F0F0F;
+    font-weight: bold;
+}
+
+/* =============================================================================
+ * POPOVER (ВСПЛЫВАЮЩИЕ ОКНА)
+ * ============================================================================= */
+
+popover {
+    background-color: #1A1A1A;
+    color: #E8E8E8;
+    border: 1px solid #404040;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+popover list {
+    background-color: transparent;
+}
+
+/* =============================================================================
+ * CHECKBOXES И RADIO BUTTONS
+ * ============================================================================= */
+
+checkbutton check,
+radiobutton radio {
+    background-color: #262626;
+    border: 1px solid #404040;
+    min-height: 16px;
+    min-width: 16px;
+}
+
+checkbutton check:hover,
+radiobutton radio:hover {
+    border-color: #EC4899;
+    background-color: #333333;
+}
+
+checkbutton check:checked,
+radiobutton radio:checked {
+    background-color: #EC4899;
+    border-color: #D946EF;
+    -gtk-icon-source: -gtk-icontheme("object-select-symbolic");
+    color: #0F0F0F;
+}
+
+checkbutton check:disabled,
+radiobutton radio:disabled {
+    background-color: #0F0F0F;
+    border-color: #404040;
+    color: #666666;
+}
+
+/* =============================================================================
+ * PROGRESSBAR (ПРОГРЕСС-БАР)
+ * ============================================================================= */
+
+progressbar {
+    background-color: #1A1A1A;
+    border: 1px solid #404040;
+    border-radius: 3px;
+}
+
+progressbar progress {
+    background-image: linear-gradient(to right, #BE185D, #EC4899, #D946EF);
+    border-radius: 3px;
+    min-height: 6px;
+}
+
+progressbar trough {
+    background-color: #1A1A1A;
+    border-radius: 3px;
+}
+
+/* =============================================================================
+ * SCALE (ПОЛЗУНКИ)
+ * ============================================================================= */
+
+scale {
+    min-height: 15px;
+    min-width: 15px;
+}
+
+scale trough {
+    background-color: #1A1A1A;
+    border: 1px solid #404040;
+    border-radius: 3px;
+}
+
+scale highlight {
+    background-image: linear-gradient(to right, #BE185D, #EC4899);
+    border-radius: 3px;
+}
+
+scale slider {
+    background-image: linear-gradient(to bottom, #EC4899, #BE185D);
+    border: 2px solid #D946EF;
+    border-radius: 50%;
+    min-height: 18px;
+    min-width: 18px;
+}
+
+scale slider:hover {
+    background-image: linear-gradient(to bottom, #F472B6, #EC4899);
+    border-color: #EC4899;
+    box-shadow: 0 0 4px rgba(236, 72, 153, 0.4);
+}
+
+scale slider:active {
+    background-image: linear-gradient(to bottom, #D946EF, #BE185D);
+}
+
+/* =============================================================================
+ * SWITCHES (ПЕРЕКЛЮЧАТЕЛИ)
+ * ============================================================================= */
+
+switch {
+    background-color: #262626;
+    border: 1px solid #404040;
+    border-radius: 12px;
+    min-height: 24px;
+    min-width: 48px;
+}
+
+switch:checked {
+    background-image: linear-gradient(to right, #BE185D, #EC4899);
+    border-color: #D946EF;
+}
+
+switch slider {
+    background-color: #E8E8E8;
+    border: 1px solid #666666;
+    border-radius: 50%;
+    min-height: 20px;
+    min-width: 20px;
+}
+
+switch:checked slider {
+    background-color: #0F0F0F;
+    border-color: #EC4899;
+}
+
+/* =============================================================================
+ * SPINNER (ЗАГРУЗКА)
+ * ============================================================================= */
+
+spinner {
+    color: #EC4899;
+    -gtk-icon-source: -gtk-icontheme("process-working-symbolic");
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to { -gtk-icon-transform: rotate(1turn); }
+}
+
+/* =============================================================================
+ * TOOLTIPS (ПОДСКАЗКИ)
+ * ============================================================================= */
+
+tooltip {
+    background-color: #262626;
+    color: #E8E8E8;
+    border: 1px solid #404040;
+    border-radius: 3px;
+    padding: 5px;
+}
+
+tooltip.background {
+    background-color: #262626;
+}
+
+/* =============================================================================
+ * PLACESBAR (ПАНЕЛЬ МЕСТ В ФАЙЛОВОМ МЕНЕДЖЕРЕ)
+ * ============================================================================= */
+
+.places-sidebar {
+    background-color: #1A1A1A;
+}
+
+.places-sidebar row {
+    padding: 5px 10px;
+    color: #E8E8E8;
+}
+
+.places-sidebar row:hover {
+    background-color: #262626;
+}
+
+.places-sidebar row:selected {
+    background-color: #2D2D4D;
+    color: #EC4899;
+    font-weight: bold;
+}
+
+.places-sidebar row image {
+    color: #EC4899;
+}
+
+/* =============================================================================
+ * FILE CHOOSER (ДИАЛОГ ВЫБОРА ФАЙЛОВ)
+ * ============================================================================= */
+
+filechooser .path-bar {
+    background-color: #1A1A1A;
+    border: 1px solid #404040;
+}
+
+filechooser actionbar {
+    background-color: #262626;
+    border-top: 1px solid #404040;
+}
+
+/* =============================================================================
+ * ICONVIEW (ПРЕДСТАВЛЕНИЕ ИКОНОК)
+ * ============================================================================= */
+
+iconview {
+    background-color: #1A1A1A;
+    color: #E8E8E8;
+}
+
+iconview:selected {
+    background-color: #2D2D4D;
+    color: #EC4899;
+}
+
+iconview:selected:focus {
+    background-color: #3D3D5D;
+    color: #D946EF;
+}
+
+/* =============================================================================
+ * NAUTILUS СПЕЦИФИЧНЫЕ СТИЛИ
+ * ============================================================================= */
+
+.nautilus-window .floating-bar {
+    background-color: #262626;
+    border: 1px solid #404040;
+    color: #E8E8E8;
+}
+
+.nautilus-canvas-item {
+    border-radius: 3px;
+}
+
+.nautilus-canvas-item.dim-label {
+    color: #999999;
+}
+
+.nautilus-list-dim-label {
+    color: #999999;
+}
+
+/* =============================================================================
+ * СПЕЦИАЛЬНЫЕ ЭФФЕКТЫ
+ * ============================================================================= */
+
+/* Анимация для активных элементов */
+@keyframes glow {
+    0%, 100% { box-shadow: 0 0 5px rgba(236, 72, 153, 0.4); }
+    50% { box-shadow: 0 0 10px rgba(217, 70, 239, 0.6); }
+}
+
+.glow-effect {
+    animation: glow 2s ease-in-out infinite;
+}
+
+/* =============================================================================
+ * ДОПОЛНИТЕЛЬНЫЕ НАСТРОЙКИ
+ * ============================================================================= */
+
+/* Рамки */
+frame > border,
+.frame {
+    border: 1px solid #404040;
+}
+
+/* Separators */
+separator {
+    background-color: #404040;
+    min-width: 1px;
+    min-height: 1px;
+}
+
+/* InfoBar */
+infobar {
+    background-color: #1A1A1A;
+    border: 1px solid #404040;
+}
+
+infobar.error {
+    background-color: rgba(239, 68, 68, 0.1);
+    border-color: #EF4444;
+    color: #E8E8E8;
+}
+
+infobar.warning {
+    background-color: rgba(245, 158, 11, 0.1);
+    border-color: #F59E0B;
+    color: #E8E8E8;
+}
+
+infobar.info {
+    background-color: rgba(236, 72, 153, 0.1);
+    border-color: #EC4899;
+    color: #E8E8E8;
+}

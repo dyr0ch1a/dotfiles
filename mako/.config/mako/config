@@ -1,0 +1,42 @@
+# Общие настройки уведомлений
+font=Sans 11
+width=380
+height=140
+margin=16
+padding=14
+border-size=2
+border-radius=10              
+anchor=top-right
+layer=overlay
+default-timeout=5000   
+ignore-timeout=1
+max-history=10
+
+# Базовый фон — лёгкий розовато-серый (полупрозрачный)
+background-color=#3a2a35cc    
+
+# Текст — светлый розовато-белый, хорошо читается
+text-color=#f5e0f0
+
+# Акцент и рамка — основной розовый/фуксия
+border-color=#ff66cc
+progress-color=source #e066ff
+
+# ──────────────────────────────────────────────
+# Критические — тёмный насыщенный фон + яркая рамка
+[urgency=critical]
+background-color=#2c0f24ee    
+border-color=#ff66cc          
+text-color=#ffe6f2            
+default-timeout=0            
+# ──────────────────────────────────────────────
+
+# Обычные уведомления — мягкий розовый акцент
+[urgency=normal]
+border-color=#ff66cc
+background-color=#3a2a35cc    
+
+[urgency=low]
+border-color=#ff66cc
+default-timeout=5000
+background-color=#3a2a35aa    

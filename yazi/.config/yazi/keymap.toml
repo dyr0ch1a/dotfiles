@@ -1,0 +1,11 @@
+
+[[mgr.prepend_keymap]]
+on   = [ "!" ]
+run  = "shell '$SHELL' --block"
+desc = "Open temporary shell"
+
+
+# [[manager.prepend_keymap]]
+# on   = "e"
+# run  = 'shell "helix \"$@\"" --block'
+# desc = "Open with Helix"

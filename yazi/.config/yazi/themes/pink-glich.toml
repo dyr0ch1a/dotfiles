@@ -1,0 +1,109 @@
+
+# vim:fileencoding=utf-8
+
+[mgr]
+cwd = { fg = "#FF4FA3" }
+
+hovered         = { reversed = true }
+preview_hovered = { underline = true }
+
+find_keyword  = { fg = "#FF007F", bold = true, italic = true, underline = true }
+find_position = { fg = "#D9007E", bold = true }
+
+marker_copied   = { fg = "#0A0A0A", bg = "#F7C6D9" }
+marker_cut      = { fg = "#0A0A0A", bg = "#FF4FA3" }
+marker_marked   = { fg = "#0A0A0A", bg = "#D9007E" }
+marker_selected = { fg = "#0A0A0A", bg = "#FF007F" }
+
+count_copied   = { fg = "#0A0A0A", bg = "#F7C6D9" }
+count_cut      = { fg = "#0A0A0A", bg = "#FF4FA3" }
+count_selected = { fg = "#0A0A0A", bg = "#D9007E" }
+
+border_symbol = "│"
+border_style  = { fg = "#2E2E2E" }
+
+
+[tabs]
+active   = { fg = "#0A0A0A", bg = "#FF4FA3", bold = true }
+inactive = { fg = "#FF4FA3", bg = "#0A0A0A" }
+
+
+[mode]
+normal_main = { fg = "#0A0A0A", bg = "#FF4FA3", bold = true }
+normal_alt  = { fg = "#FF4FA3", bg = "#0A0A0A" }
+
+select_main = { fg = "#0A0A0A", bg = "#D9007E", bold = true }
+select_alt  = { fg = "#FF4FA3", bg = "#0A0A0A" }
+
+unset_main = { fg = "#0A0A0A", bg = "#6A0D45", bold = true }
+unset_alt  = { fg = "#FF4FA3", bg = "#0A0A0A" }
+
+
+[status]
+overall = { fg = "#F7C6D9" }
+sep_left  = { open = "", close = "" }
+sep_right = { open = "", close = "" }
+
+progress_label  = { fg = "#0A0A0A", bold = true }
+progress_normal = { fg = "#FF4FA3", bg = "#0A0A0A" }
+progress_error  = { fg = "#FF007F", bg = "#0A0A0A" }
+
+perm_sep   = { fg = "#2E2E2E" }
+perm_type  = { fg = "#F7C6D9" }
+perm_read  = { fg = "#FF4FA3" }
+perm_write = { fg = "#FF007F" }
+perm_exec  = { fg = "#D9007E" }
+
+
+[pick]
+border = { fg = "#FF4FA3" }
+active = { fg = "#D9007E", bold = true }
+
+
+[input]
+border   = { fg = "#FF4FA3" }
+selected = { reversed = true }
+
+
+[cmp]
+border = { fg = "#FF4FA3" }
+
+
+[tasks]
+border  = { fg = "#FF4FA3" }
+hovered = { fg = "#D9007E", underline = true }
+
+
+[which]
+mask      = { bg = "#2E2E2E" }
+cand      = { fg = "#FF4FA3" }
+rest      = { fg = "#F7C6D9" }
+desc      = { fg = "#D9007E" }
+separator = "  "
+separator_style = { fg = "#6A0D45" }
+
+
+[help]
+on      = { fg = "#F7C6D9" }
+run     = { fg = "#FF4FA3" }
+hovered = { reversed = true, bold = true }
+footer  = { fg = "#0A0A0A", bg = "#BFBFBF" }
+
+
+[notify]
+title_info  = { fg = "#F7C6D9" }
+title_warn  = { fg = "#FF4FA3" }
+title_error = { fg = "#FF007F" }
+
+
+[filetype]
+rules = [
+	{ mime = "image/*", fg = "#FF4FA3" },
+	{ mime = "video/*", fg = "#D9007E" },
+	{ mime = "audio/*", fg = "#D9007E" },
+
+	{ mime = "application/*", fg = "#BFBFBF" },
+
+	{ name = "*",  fg = "#F7C6D9" },
+	{ name = "*/", fg = "#FF4FA3" }
+]

@@ -1,0 +1,68 @@
+binds {
+    // Workspaces
+    "Super+1" { focus-workspace 1; }
+    "Super+2" { focus-workspace 2; }
+    "Super+3" { focus-workspace 3; }
+    "Super+4" { focus-workspace 4; }
+    "Super+5" { focus-workspace 5; }
+    "Super+6" { focus-workspace 6; }
+    "Super+7" { focus-workspace 7; }
+    "Super+8" { focus-workspace 8; }
+    "Super+9" { focus-workspace 9; }
+    "Super+Shift+1" { move-window-to-workspace 1; }
+    "Super+Shift+2" { move-window-to-workspace 2; }
+    "Super+Shift+3" { move-window-to-workspace 3; }
+    "Super+Shift+4" { move-window-to-workspace 4; }
+    "Super+Shift+5" { move-window-to-workspace 5; }
+    "Super+Shift+6" { move-window-to-workspace 6; }
+    "Super+Shift+7" { move-window-to-workspace 7; }
+    "Super+Shift+8" { move-window-to-workspace 8; }
+    "Super+Shift+9" { move-window-to-workspace 9; }
+
+    // Window management
+    "Super+Q" { close-window; }
+    "Super+F" { fullscreen-window; }
+    "Super+T" { toggle-window-floating; }
+    "Super+R" { spawn "fuzzel"; }
+    "Super+Return" { spawn "kitty"; }
+    "Super+Alt+L" { spawn "hyprlock"; }
+    "Super+E" { spawn "kitty" "-e" "yazi"; }
+    "Super+Alt+B" {spawn "kitty" "-e" "btop";}
+
+    Super+H { focus-column-left; }
+    Super+L { focus-column-right; }
+    Super+J { focus-window-down; }
+    Super+K { focus-window-up; }
+
+    // Перемещение колонок и окон
+    Super+Ctrl+H { move-column-left; }
+    Super+Ctrl+L { move-column-right; }
+    Super+Ctrl+J { move-window-down; }
+    Super+Ctrl+K { move-window-up; }
+
+    // Изменение размера окна
+    Super+Shift+H   { set-column-width "-10%"; }   
+    Super+Shift+L   { set-column-width "+10%"; }   
+    Super+Shift+K   { set-window-height "-10%"; } 
+    Super+Shift+J   { set-window-height "+10%"; }   
+
+    // Media keys
+    XF86AudioRaiseVolume allow-when-locked=true { spawn "wpctl" "set-volume" "-l" "1" "@DEFAULT_AUDIO_SINK@" "5%+"; }
+    XF86AudioLowerVolume allow-when-locked=true { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "5%-"; }
+    XF86AudioMute allow-when-locked=true { spawn "wpctl" "set-mute" "@DEFAULT_AUDIO_SINK@" "toggle"; }
+    XF86AudioMicMute allow-when-locked=true { spawn "wpctl" "set-mute" "@DEFAULT_AUDIO_SOURCE@" "toggle"; }
+    XF86MonBrightnessUp allow-when-locked=true { spawn "brightnessctl" "set" "5%+"; }
+    XF86MonBrightnessDown allow-when-locked=true { spawn "brightnessctl" "set" "5%-"; }
+
+    // Screenshots
+    Print {
+        spawn "sh" "-c" "grim -g \"$(slurp)\" /mnt/data/Pictures/Screen/$(date +%F_%H-%M-%S).png";
+    }
+
+    "Shift+Print" {
+        spawn "sh" "-c" "grim /mnt/data/Pictures/Screen/$(date +%F_%H-%M-%S)-full.png";
+    }
+
+}
+
+
