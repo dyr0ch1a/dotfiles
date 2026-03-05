@@ -15,32 +15,29 @@
         "backlight",
         "battery"
     ],
-    "pulseaudio": {
+   "pulseaudio": {
         "tooltip": false,
         "scroll-step": 5,
         "format": "{icon} {volume}%",
-        "format-muted": "{icon} {volume}%",
+        "format-muted": "Muter",
+        "format-icons": ["", "", ""],
         "on-click-right": "kitty -e ncpamixer",
-        "format-icons": {
-            "default": [
-                "",
-                "",
-                ""
-            ]
-        }
     },
 
     "niri/language": {
         "format": "{long}",
     },
-        "network": {
+    "network": {
         "tooltip": false,
-        "format-wifi": "   {essid}",
-        "format-ethernet": " 󰈀   {ifname} | {bandwidthUpBytes} {bandwidthDownBytes}",
+        "format-wifi": "   {essid}",
+        "format-disconnected": " 󰖪 ",
+        "format-disabled": "  ",
+        "format-ethernet": " 󰈀  {ifname} | {bandwidthUpBytes} {bandwidthDownBytes}",
+        "on-click-right": "kitty -e netpala"
     },
     "backlight": {
         "tooltip": false,
-        "format": " {}%",
+        "format": "  {}%",
         "interval": 1,
         "on-scroll-up": "light -A 5",
         "on-scroll-down": "light -U 5"
@@ -51,16 +48,16 @@
             "warning": 30,
             "critical": 20
         },
-        "format": "{icon}  {capacity}%",
+        "format": "{icon}   {capacity}%",
         "format-charging": "  {capacity}%",
         "format-plugged": "  {capacity}%",
-        "format-alt": "{icon}  {time}",
+        "format-alt": "{icon}   {time}",
         "format-icons": [
-            "",
-            "",
-            "",
-            "",
-            ""
+            " ",
+            " ",
+            " ",
+            " ",
+            " "
         ]
     },
     "tray": {
@@ -72,9 +69,9 @@
         "on-click-right": "kitty -e tclock"
     },
     "bluetooth": {
-        "format": " {status}",
-        "format-connected": " {device_alias}",
-        "format-connected-battery": " {device_alias} {device_battery_percentage}%",
+        "format": "  {status}",
+        "format-connected": "  {device_alias}",
+        "format-connected-battery": "  {device_alias} {device_battery_percentage}%",
         "tooltip-format": "{controller_alias}\t{controller_address}\n\n{num_connections} connected",
         "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
         "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
@@ -101,8 +98,8 @@
     "niri/workspaces": {
         "format": "{icon}",
         "format-icons": {
-            "active": "",
-            "default": ""
+            "active": "  ",
+            "default": "  "
         }
     },
 }

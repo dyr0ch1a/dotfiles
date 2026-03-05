@@ -2,4 +2,4 @@ if status is-interactive
     fastfetch
 end
 
-fish_default_key_bindings
+fish_vi_key_bindings

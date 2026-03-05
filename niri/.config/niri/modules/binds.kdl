@@ -56,11 +56,11 @@ binds {
 
     // Screenshots
     Print {
-        spawn "sh" "-c" "grim -g \"$(slurp)\" /mnt/data/Pictures/Screen/$(date +%F_%H-%M-%S).png";
+        spawn "sh" "-c" "grim -g \"$(slurp)\" /home/dyr0ch1a/Data/Pictures/Screen/$(date +%F_%H-%M-%S).png";
     }
 
     "Shift+Print" {
-        spawn "sh" "-c" "grim /mnt/data/Pictures/Screen/$(date +%F_%H-%M-%S)-full.png";
+        spawn "sh" "-c" "grim /home/dyr0ch1a/Data/Pictures/Screen/$(date +%F_%H-%M-%S)-full.png";
     }
 
 }

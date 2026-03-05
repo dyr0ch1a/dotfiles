@@ -83,11 +83,6 @@ auto-format = true
 command = "biome"
 args = ["lsp-proxy"]
 
-# === LaTeX ===
-# [languages.tex]
-# language-server = "texlab"
-# args = []
-
 # === Toml-Rust ===
 [language-server.taplo]
 command = "taplo"
@@ -101,22 +96,6 @@ roots = ["Cargo.toml", "Cargo.locl"]
 language-servers = ["taplo"]
 auto-format = true
 formatter = {command = "taplo", args = ["fmt", "--stdin"]}
-
-# === Kotlin ===
-[language-server.kotlin]
-command = "kotlin-language-server"
-
-[[language]]
-name = "kotlin"
-scope = "source.kotlin"
-injection-regex = "kotlin"
-file-types = ["kt", "kts"]
-shebangs = ["kotlin"]
-roots = ["settings.gradle", "settings.gradle.kts", "build.gradle", "build.gradle.kts"]
-comment-token = "//"
-language-servers = ["kotlin-language-server"]
-auto-format = true
-indent = { tab-width = 4, unit = "    " }  
 
 # === Lua ===
 [language-server.lua-lsp]
@@ -134,14 +113,6 @@ injection-regex = "lua"
 file-types = ["lua"]
 auto-format = true
 
-# === Markdown ===
-[[language]]
-name = "markdown"
-language-servers = ["md-lsp"]
-
-[language-server.md-lsp]
-command = "marksman"
-
 # === Scheme (Steel) ===
 [[language]]
 name = "scheme"
@@ -151,16 +122,15 @@ language-servers = ["scheme-lsp"]
 command = "steel-language-server"
 
 # === Typst ===
+[language-server.tinymist]
+
+command = "tinymist"
+
 
 [[language]]
-name = "typst"
-scope = "source.typst"
-injection-regex = "typst"
-file-types = ["typ"]
-roots = []
-comment-token = "//"
-language-servers = ["typst-lsp"]
-indent = { tab-width = 2, unit = "  " }
 
-[language-server.typst-lsp]
-command = "typst-lsp"
+name = "typst"
+
+language-servers = ["tinymist"]
+
+
