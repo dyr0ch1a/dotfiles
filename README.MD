@@ -1,14 +1,11 @@
-Preview
----
+### My `.dotfiles`
 
-![preview#1](<./preview/2026-02-18_21-17-00-full.png>)
+Yes, I know this style horrifies a lot of people, BUT still.
 
-![priview#2](<./preview/2026-02-18_21-19-00-full.png>)
+> Present Day... Present Time...  
+> Let's all love Lain
 
-
->Present day, present time~
->Let's all love lain
-
-![priview#3](<./Lain.jpg>)
-
-
+### Some screenshots of my current desktop setup
+![](https://github.com/dyr0ch1a/vault/blob/main/dotfiles/2026-03-07_16-37-12-full.png)
+![](https://github.com/dyr0ch1a/vault/blob/main/dotfiles/2026-02-18_21-19-00-full.png)
+![](https://github.com/dyr0ch1a/vault/blob/main/dotfiles/2026-03-07_16-37-12-full.png)
