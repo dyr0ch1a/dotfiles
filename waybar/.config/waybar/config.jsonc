@@ -1,5 +1,6 @@
 {
     "layer": "top",
+    "height": 30,
     "modules-left": [
         "niri/workspaces",
         "tray",
@@ -15,12 +16,12 @@
         "backlight",
         "battery"
     ],
-   "pulseaudio": {
+    "pulseaudio": {
         "tooltip": false,
         "scroll-step": 5,
-        "format": "{icon} {volume}%",
-        "format-muted": "Muter",
-        "format-icons": ["", "", ""],
+        "format": "{icon}  {volume}%",
+        "format-muted": "󰝟",
+        "format-icons": ["󰕿", "󰖀", "󰕾"],
         "on-click-right": "kitty -e ncpamixer",
     },
 
@@ -30,14 +31,14 @@
     "network": {
         "tooltip": false,
         "format-wifi": "   {essid}",
-        "format-disconnected": " 󰖪 ",
-        "format-disabled": "  ",
-        "format-ethernet": " 󰈀  {ifname} | {bandwidthUpBytes} {bandwidthDownBytes}",
+        "format-disconnected": "󰖪   ",
+        "format-disabled": "",
+        "format-ethernet": "󰈀   {ifname} | {bandwidthUpBytes} {bandwidthDownBytes}",
         "on-click-right": "kitty -e netpala"
     },
     "backlight": {
         "tooltip": false,
-        "format": "  {}%",
+        "format": "   {}%",
         "interval": 1,
         "on-scroll-up": "light -A 5",
         "on-scroll-down": "light -U 5"
@@ -48,16 +49,16 @@
             "warning": 30,
             "critical": 20
         },
-        "format": "{icon}   {capacity}%",
+        "format": "{icon}  {capacity}%",
         "format-charging": "  {capacity}%",
         "format-plugged": "  {capacity}%",
-        "format-alt": "{icon}   {time}",
+        "format-alt": "{icon}  {time}",
         "format-icons": [
-            " ",
-            " ",
-            " ",
-            " ",
-            " "
+            "",
+            "",
+            "",
+            "",
+            ""
         ]
     },
     "tray": {
@@ -65,7 +66,7 @@
         "spacing": 10
     },
     "clock": {
-        "format": "  {:%H:%M %m/%d/%y}",
+        "format": "   {:%H:%M %m/%d/%y}",
         "on-click-right": "kitty -e tclock"
     },
     "bluetooth": {
@@ -78,28 +79,11 @@
         "tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t{device_battery_percentage}%",
         "on-click-right": "kitty -e bluetuith"
     },
-    "custom/launcher": {
-        "format": "∞",
-        "on-click": "fuzzel",
-        "on-click-right": "killall fuzzel"
-    },
-    "user": {
-        "format": "{user}",
-        "interval": 60,
-        "height": 30,
-        "width": 30,
-        "icon": true,
-        "on-click": "fuzzel",
-        "on-click-right": "killall fuzzel"
-    },
-    "custom/notifications": {
-        "format": ""
-    },
     "niri/workspaces": {
         "format": "{icon}",
         "format-icons": {
-            "active": "  ",
-            "default": "  "
+            "active": "",
+            "default": ""
         }
-    },
+    }
 }
