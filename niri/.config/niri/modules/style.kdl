@@ -1,17 +1,39 @@
 layout {
-    gaps 20
+    gaps 10
     
     border {
-        width 3
+        width 1
         active-color "#FF4FA3"
         inactive-color "#6A0D45"
     }
     
     focus-ring {
-        width 4
+        width 2
         active-color "#D9007E"
     }
     
 }
 
 prefer-no-csd
+
+animations {
+    slowdown 0.9
+
+    workspace-switch {
+        // duration-ms 400
+        spring damping-ratio=1.1 stiffness=800 epsilon=0.02
+    }
+    horizontal-view-movement {
+        duration-ms 300
+    }
+    window-open {
+        // duration-ms 500
+        spring damping-ratio=1.1 stiffness=800 epsilon=0.02
+    }
+    window-resize {
+        duration-ms 450
+    }
+    window-close {
+        duration-ms 450
+    }
+}

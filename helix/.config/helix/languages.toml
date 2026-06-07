@@ -8,9 +8,19 @@ roots = ["Cargo.toml"]
 language-servers = ["rust-analyzer"]
 auto-format = true
 
+[language-server.rust-analyzer]
+command = "rust-analyzer"
+
 [language-server.rust-analyzer.config]
-cargo.allFeatures = true       
-check.command = "clippy"
+check = { command = "clippy" }
+
+cargo = { allFeatures = false, loadOutDirsFromCheck = false }
+
+rustfmt = { extraArgs = ["+nightly"] }
+
+procMacro = { enable = false }
+
+diagnostics = { disabled = ["unresolved-proc-macro"] }
 
 # === Python ===
 [[language]]
@@ -65,6 +75,7 @@ language-servers = ["fortls"]
 
 [language-server.fortls]
 command = "fortls"
+
 # === JSON ===
 [[language]]
 name = "json"
@@ -96,22 +107,6 @@ language-servers = ["taplo"]
 auto-format = true
 formatter = {command = "taplo", args = ["fmt", "--stdin"]}
 
-# === Lua ===
-[language-server.lua-lsp]
-command = "/home/dyr0ch1a/Data/App/git_cache/Lua-lsp/bin/lua-language-server"
-
-[language-server.lua-language-server.config]
-workspace.library = {}
-workspace.checkThirdParty = false
-
-[[ language ]]
-name = "lua"
-scope = "source.lua"
-language-servers = ["lua-lsp"]
-injection-regex = "lua"
-file-types = ["lua"]
-auto-format = true
-
 # === Scheme (Steel) ===
 [[language]]
 name = "scheme"
@@ -132,4 +127,58 @@ name = "typst"
 
 language-servers = ["tinymist"]
 
+# === Haskell ===
+[[language]]
+name = "haskell"
+language-servers = ["hls"]         
+auto-format = true
+roots = ["*.cabal", "stack.yaml", "Setup.hs"]   
+
+[language-server.hls]
+command = "haskell-language-server-wrapper"
+args = ["--lsp"]
+
+[language-server.hls.config.haskell]
+formattingProvider = "ormolu"
+
+# === Ada ===
+
+[[language]]
+name = "ada"
+language-servers = ["als"]
+auto-format = true
+roots = [""]
+
+[language-server.als]
+command = "ada_language_server"
+
+# === Markdown ===
+[language-server.markdown-oxide]
+command = "markdown-oxide"
+
+[[language]]
+name = "markdown"
+language-servers = ["markdown-oxide"]
+
+# === Lua ===
+[[language]]
+name = "lua"
+formatter = { command = "stylua", args = ["-"] }
+auto-format = true
+
+# === Java ===
+[[language]]
+name = "java"
+language-servers = [ "jdtls" ]
+
+[language-server.jdtls]
+command = "jdtls"
+
+# === Kotlin ===
+[[language]]
+name = "kotlin"
+language-servers = ["kotlin-lsp"]
+
+[language-server.kotlin-lsp]
+command = "kotlin-lsp"
 

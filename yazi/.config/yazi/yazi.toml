@@ -30,6 +30,5 @@ rules = [
   { mime = "image/*", use = "image" },
   { mime = "video/*", use = "play" },
   { mime = "text/*", use = "edit" },
-  { name = "*.jsonc", use = "edit" },
-  { name = "*", use = "edit" }
+  { mime = "*/*", use = "edit" }
 ]

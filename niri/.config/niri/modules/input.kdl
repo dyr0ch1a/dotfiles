@@ -28,6 +28,7 @@ input {
           // disabled-on-external-mouse
           // middle-emulation
       }
+    focus-follows-mouse max-scroll-amount="0%"
 }
 
 
