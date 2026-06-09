@@ -34,7 +34,7 @@
         "format-disconnected": "󰖪   ",
         "format-disabled": "",
         "format-ethernet": "󰈀   {ifname} | {bandwidthUpBytes} {bandwidthDownBytes}",
-        "on-click-right": "kitty -e netpala"
+        "on-clik-right": "kitty -e wlctl"
     },
     "backlight": {
         "tooltip": false,
@@ -52,14 +52,13 @@
         "format": "{icon}  {capacity}%",
         "format-charging": "  {capacity}%",
         "format-plugged": "  {capacity}%",
-        "format-alt": "{icon}  {time}",
         "format-icons": [
             "",
             "",
             "",
             "",
             ""
-        ]
+        ],
     },
     "tray": {
         "icon-size": 18,

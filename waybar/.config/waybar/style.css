@@ -11,7 +11,7 @@
 @define-color fg #F6D6E3;
 @define-color fg-muted rgba(246, 214, 227, 0.70);
 
-@define-color accent #C2185B;
+@define-color accent #D9007E;
 @define-color accent-bright #FF4FA3;
 
 @define-color border rgba(194, 24, 91, 0.35);
@@ -44,8 +44,9 @@ window#waybar {
 
 #workspaces {
   background-color: transparent;
-  padding-left: 1px;
-  padding-right: 1px
+  margin-left: 20px;
+  padding-bottom: 5px;
+  padding-left: 10px;
 }
 
 #workspaces button {
@@ -90,19 +91,11 @@ window#waybar {
 
 /* === Hover Effects ========================================== */
 
-#custom-microphone:hover,
-#custom-volume:hover,
 #pulseaudio:hover,
 #network:hover,
-#custom-vpn:hover,
 #bluetooth:hover,
-#custom-bluetooth:hover,
-#custom-power:hover,
-#custom-asus-profile:hover,
-#custom-battery:hover,
 #battery:hover,
 #backlight:hover,
-#custom-brightness:hover,
 #clock:hover,
 #tray:hover {
   background-color: @accent;

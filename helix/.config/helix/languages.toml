@@ -115,18 +115,6 @@ language-servers = ["scheme-lsp"]
 [language-server.scheme-lsp]
 command = "steel-language-server"
 
-# === Typst ===
-[language-server.tinymist]
-
-command = "tinymist"
-
-
-[[language]]
-
-name = "typst"
-
-language-servers = ["tinymist"]
-
 # === Haskell ===
 [[language]]
 name = "haskell"
@@ -152,13 +140,36 @@ roots = [""]
 [language-server.als]
 command = "ada_language_server"
 
+# === Typst ===
+[language-server.tinymist]
+command = "tinymist"
+
+[[language]]
+name = "typst"
+language-servers = ["tinymist", "typos", "harper-ls", "ltex"]
+
+# === Latex ===
+[language-server.ltex]
+command = "ltex-ls-plus"
+config.ltex.language = "ru-RU"
+
 # === Markdown ===
 [language-server.markdown-oxide]
 command = "markdown-oxide"
 
 [[language]]
 name = "markdown"
-language-servers = ["markdown-oxide"]
+language-servers = ["markdown-oxide", "typos", "harper-ls", "ltex"]
+
+[language-server.typos]
+command = "typos-lsp"
+environment = {"RUST_LOG" = "typos_lsp=error"}
+config.config = "~/.config/typos-lsp/typos.toml"
+config.diagnosticSeverity = "Info"
+
+[language-server.harper-ls]
+command = "harper-ls"
+args = ["--stdio"]
 
 # === Lua ===
 [[language]]
@@ -181,4 +192,12 @@ language-servers = ["kotlin-lsp"]
 
 [language-server.kotlin-lsp]
 command = "kotlin-lsp"
+
+# === Zig ===
+[[language]]
+name = "zig"
+language-servers = ["zls"] 
+
+[language-server.zls]
+command = "zls"
 

@@ -18,7 +18,11 @@ play = [
 ]
 
 image = [
-  { run = 'fim "$@"', block = true, desc = "FIM" }
+  { run = 'vimiv "$@"', block = true, desc = "vimiv" }
+]
+
+reader = [
+  {run = 'zathura "$@"', block=true, desc = "Zathura"}
 ]
 
 gif = [
@@ -27,8 +31,10 @@ gif = [
 
 [open]
 rules = [
+  { url = "image/gif", use = "git"},
   { mime = "image/*", use = "image" },
   { mime = "video/*", use = "play" },
   { mime = "text/*", use = "edit" },
+  { mime = "application/pdf", use = "reader"},
   { mime = "*/*", use = "edit" }
 ]

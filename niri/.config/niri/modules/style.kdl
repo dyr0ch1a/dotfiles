@@ -1,20 +1,49 @@
+prefer-no-csd
 layout {
     gaps 10
-    
+    default-column-width {
+        proportion 0.6
+    }
+	always-center-single-column    
     border {
-        width 1
-        active-color "#FF4FA3"
-        inactive-color "#6A0D45"
+        on
+        width 2
+        active-color "#FF2D9B"
+        inactive-color "#4c222a"
     }
     
     focus-ring {
-        width 2
-        active-color "#D9007E"
+        off
     }
     
+      shadow {
+        // off
+        on
+        softness 30
+        spread 5
+        offset x=0 y=5
+        draw-behind-window true
+        color "#00000070"
+        // inactive-color "#00000054"
+    }
+
+    tab-indicator {
+        on
+        gap 5
+        width 5
+        length total-proportion=1.0
+        position "left"
+        gaps-between-tabs 2
+        corner-radius 8
+        active-color "#FF2D9B"
+        inactive-color "#4c222a"
+    }
+        insert-hint {
+        on
+        color "#ffc87f80"
+    }
 }
 
-prefer-no-csd
 
 animations {
     slowdown 0.9
@@ -36,4 +65,6 @@ animations {
     window-close {
         duration-ms 450
     }
+
 }
+
