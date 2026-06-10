@@ -34,7 +34,7 @@
         "format-disconnected": "󰖪   ",
         "format-disabled": "",
         "format-ethernet": "󰈀   {ifname} | {bandwidthUpBytes} {bandwidthDownBytes}",
-        "on-clik-right": "kitty -e wlctl"
+        "on-click-right": "kitty -e wlctl"
     },
     "backlight": {
         "tooltip": false,
