@@ -1,2 +1,10 @@
-[flavor]
-use = "cyberpunk-pink"
+[manager]
+hovered         = { fg = "#0A0A0A", bg = "#B3125A" }
+preview_hovered = { fg = "#0A0A0A", bg = "#5A0028" }
+link_style      = { fg = "#8A003D", italic = true }
+
+[icon]
+rules = [
+  { name = "*/", fg = "#D94C8A" },
+  { name = "*",  fg = "#C9C9C9" },
+]

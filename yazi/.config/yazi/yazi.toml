@@ -8,33 +8,56 @@ sort_by_modified = true
 sort_reverse = false
 show_hidden = false
 
+cwd = { fg = "#FF4FA3", bold = true }
+hovered = { fg = "#0A0A0A", bg = "#FF007F" }
+
 [opener]
 edit = [
-  { run = 'helix "$@"', block = true, desc = "Helix" }
+  { run = 'helix "$@"', block = true, desc = "Helix" },
+  { run = 'vim "$@"', block = true, desc = "VIM" }
 ]
 
 play = [
-  { run = 'mpv --volume=50 "$@"', orphan = true, for = "unix", desc = "MPV" }
+  { run = 'mpv --volume=30 "$@"', orphan = true, for = "unix", desc = "MPV" }
 ]
 
 image = [
-  { run = 'vimiv "$@"', block = true, desc = "vimiv" }
+  { run = 'imv "$@"', block = true, desc = "IMV" },
+  { run = 'sh -c "chafa \"$@"\"; read', block=true, desc = "Chafa" },
+
 ]
 
 reader = [
-  {run = 'zathura "$@"', block=true, desc = "Zathura"}
+  { run = 'zathura "$@"', block=true, desc = "Zathura" },
+  { run = 'okular "$@"', block=true, desc = "Okular" },
 ]
 
-gif = [
-  { run = 'chafa "$@"', block = true, shell = true, desc = "Chafa gif preview"}
+office = [
+  { run = 'libreoffice "$@"', orphan = true, desc = "LibreOffice" },
+  { run = 'onlyoffice-desktopeditors "$@"', orphan = true, desc = "OnlyOffice" },
+]
+
+music = [
+  { run = 'mpv --volume=30 --force-window=yes "$@"', orphan = true, for = "unix", desc = "MPV" },
+  { run = 'mocp --volume=50 --playit "$@"', orphan = true, for = "unix", desc = "Moc" }
 ]
 
 [open]
 rules = [
-  { url = "image/gif", use = "git"},
   { mime = "image/*", use = "image" },
   { mime = "video/*", use = "play" },
   { mime = "text/*", use = "edit" },
+  { mime = "audio/*", use = "music"},
   { mime = "application/pdf", use = "reader"},
-  { mime = "*/*", use = "edit" }
+  { mime = "application/vnd.openxmlformats-officedocument.wordprocessingml.document", use = "office" },
+  { mime = "application/msword", use = "office" },
+  { mime = "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", use = "office" },
+  { mime = "application/vnd.ms-excel", use = "office" },
+  { mime = "application/vnd.openxmlformats-officedocument.presentationml.presentation", use = "office" },
+  { mime = "application/vnd.ms-powerpoint", use = "office" },
+  { mime = "application/vnd.oasis.opendocument.text", use = "office" },
+  { mime = "application/vnd.oasis.opendocument.spreadsheet", use = "office" },
+  { mime = "application/vnd.oasis.opendocument.presentation", use = "office" },
+
+  { mime = "*/*", use = "edit"},
 ]

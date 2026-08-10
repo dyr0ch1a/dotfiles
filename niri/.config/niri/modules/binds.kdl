@@ -37,6 +37,9 @@ binds {
     }
     "Super+E" { spawn "kitty" "-e" "yazi"; }
     "Super+Alt+B" {spawn "kitty" "-e" "btop";}
+    "Super+Alt+C" {spawn "kitty" "--class" "clipse" "-e" "clipse";}
+    "Super+Ctrl+B" {spawn "buckle" "-v" "-g" "10"; }
+    "Super+Alt+K" {spawn "pkill" "buckle"; }
 
     // Switch Focus
     "Super+H" { focus-column-left; }

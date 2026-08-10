@@ -4,6 +4,7 @@
     "modules-left": [
         "niri/workspaces",
         "tray",
+        "custom/mocp"
     ],
     "modules-center": [
         "clock"
@@ -22,19 +23,24 @@
         "format": "{icon}  {volume}%",
         "format-muted": "󰝟",
         "format-icons": ["󰕿", "󰖀", "󰕾"],
-        "on-click-right": "kitty -e ncpamixer",
+        "on-click-right": "kitty --class bar-app -e ncpamixer",
     },
 
     "niri/language": {
-        "format": "{long}",
+        "format": "󰌌 {}",
+        "format-en": "eu",
+        "format-ru": "ru",
+        "format-fi": "fi",
+        "on-click-right": "kitty --class typing -e typingterm"
     },
+
     "network": {
         "tooltip": false,
         "format-wifi": "   {essid}",
         "format-disconnected": "󰖪   ",
         "format-disabled": "",
         "format-ethernet": "󰈀   {ifname} | {bandwidthUpBytes} {bandwidthDownBytes}",
-        "on-click-right": "kitty -e wlctl"
+        "on-click-right": "kitty --class bar-app -e wlctl"
     },
     "backlight": {
         "tooltip": false,
@@ -59,6 +65,7 @@
             "",
             ""
         ],
+        "interval": 1,
     },
     "tray": {
         "icon-size": 18,
@@ -66,7 +73,7 @@
     },
     "clock": {
         "format": "   {:%H:%M %m/%d/%y}",
-        "on-click-right": "kitty -e tclock"
+        "on-click-right": "kitty --class bar-app -e tclock -d"
     },
     "bluetooth": {
         "format": "  {status}",
@@ -76,7 +83,7 @@
         "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
         "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
         "tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t{device_battery_percentage}%",
-        "on-click-right": "kitty -e bluetuith"
+        "on-click-right": "kitty --class bar-app -e bluetuith"
     },
     "niri/workspaces": {
         "format": "{icon}",
@@ -84,5 +91,13 @@
             "active": "",
             "default": ""
         }
+    },
+
+    "custom/mocp": {
+        "exec": "~/.config/waybar/scripst/music-bar.sh",
+        "interval": 1,
+        "format": "{}",
+        "on-click-right": "kitty --class music -e ~/.config/waybar/scripst/music-wind.sh"
     }
+
 }

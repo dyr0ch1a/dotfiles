@@ -24,6 +24,19 @@ window-rule {
         proportion 1.0
     }
 }
+window-rule {
+	match app-id="Aseprite"
+	default-column-width {
+		proportion 1.0
+	}
+}
+
+window-rule {
+	match app-id="Ardour"
+	default-column-width {
+		proportion 1.0
+	}
+}
 
 window-rule{
 	match app-id=r#"io.github.tdesktop_x64.TDesktop"#
@@ -36,6 +49,38 @@ window-rule {
 	match app-id=r#"org.kde.kdenlive"#
     open-floating true
 
+}
+window-rule {
+    match app-id="^typing$"
+    open-floating true
+    default-column-width { proportion 0.5; }
+    default-window-height { proportion 0.5; }
+}
+window-rule {
+    match app-id="^clipse$"
+    open-floating true
+    default-column-width { proportion 0.5; }
+    default-window-height { proportion 0.5; }
+}
+
+window-rule {
+    match app-id="^bar-app$"
+    open-floating true
+    default-column-width { proportion 0.4; }
+    default-window-height { proportion 0.4; }
+}
+
+window-rule {
+	match app-id="^music$"
+	open-floating true
+	default-column-width { proportion 0.5; }
+    default-window-height { proportion 0.5; }
+}
+
+window-rule {
+    match app-id="^one.alynx.showmethekey$"
+    open-floating true
+    default-floating-position x=20 y=20 relative-to="top-right"
 }
 
 window-rule {

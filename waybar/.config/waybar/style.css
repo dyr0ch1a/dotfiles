@@ -1,197 +1,170 @@
-/* ─────────────────────────────────────────────────────────────
-   Waybar theme: Dark Fuchsia / Black / Soft Pink
-   clean unified version
-   ───────────────────────────────────────────────────────────── */
-
-/* === Palette ================================================= */
-
-@define-color bg #0A0A0C;
-@define-color bg-2 #050506;
-
-@define-color fg #F6D6E3;
-@define-color fg-muted rgba(246, 214, 227, 0.70);
-
-@define-color accent #D9007E;
-@define-color accent-bright #FF4FA3;
-
-@define-color border rgba(194, 24, 91, 0.35);
-@define-color border-strong rgba(255, 79, 163, 0.45);
-
-/* === Base ==================================================== */
-
 * {
-  border: none;
-  border-radius: 6px;
-  min-height: 0;
-  font-family: "JetBrainsMono Nerd Font";
-  font-size: 14px;
-  color: @fg;
+    border: none;
+    border-radius: 60px;
+    font-family: "Hack Nerd Font";
+    font-weight: bold;
+    font-size: 15px;
+    min-height: 0px;
+    margin: 1px 0px;
+    padding: 0.5px 0px;
 }
 
-#waybar {
-  background-color: @bg;
-  opacity: 0.95;
+.module {
+    padding: 0px 10px;
+    margin: 1px 1px;
 }
+
+.modules-left > widget:first-child .module { margin-left: 5px; }
+.modules-right > widget:last-child .module { margin-right: 5px; }
 
 window#waybar {
-  background: @bg-2;
-  color: @fg;
-  transition-property: background-color;
-  transition-duration: 0.4s;
+    background-color: transparent;
+    color: black;
+    transition: background-color 0.5s;
 }
 
-/* === Workspaces ============================================= */
-
-#workspaces {
-  background-color: transparent;
-  margin-left: 20px;
-  padding-bottom: 5px;
-  padding-left: 10px;
+window#waybar.empty #window {
+    background-color: transparent;
 }
 
+window#waybar.hidden { opacity: 0.2; }
+
+tooltip {
+    background: rgba(0, 0, 0, 0.9);
+    border-radius: 7px;
+    padding: 5px;
+}
+
+tooltip label { color: #e0b2a5; }
+
+/* Workspaces */
 #workspaces button {
-  all: initial;
-  padding: 8px 14px;
-  margin: 2px 4px;
-  border-radius: 6px;
-
-  background-color: @bg;
-  color: @fg-muted;
+    color: #e76f8b;
+    background: transparent;
+    font-weight: bolder;
+    transition: all 0.25s cubic-bezier(0.165, 0.84, 0.44, 1);
+    padding: 0 18px 0 8px;
 }
 
 #workspaces button.active {
-  background-color: @accent;
-  color: @fg;
+    color: black;
+    border-bottom: 2px solid transparent;
+    border-image: linear-gradient(70deg, #e0b2a5, #e76f8b) 1;
+    padding: 0 3px 0 2px;
+    margin-left: 4px;
+    margin-right: 9px;
 }
 
-#workspaces button:hover {
-  background-color: @accent-bright;
-  color: @bg;
+#workspaces button.visible { color: #e0b2a5; }
+
+#workspaces button.urgent {
+    background: #e0b2a5;
+    color: black;
+    padding: 0px 16px 0px 13px;
+    margin: 0px 3px 0px 9px;
 }
 
-/* === Modules (global) ======================================= */
-
-#bluetooth,
-#network,
-#battery,
-#pulseaudio,
+/* Все модули */
+#language,
 #backlight,
-#custom-vpn,
+#battery,
 #clock,
-#tray {
-  padding: 4px 8px;
-  margin: 6px 6px;
-
-  background-color: @bg;
-  border: 1px solid @border;
-  border-radius: 6px;
-
-  color: @fg;
-}
-
-/* === Hover Effects ========================================== */
-
-#pulseaudio:hover,
-#network:hover,
-#bluetooth:hover,
-#battery:hover,
-#backlight:hover,
-#clock:hover,
-#tray:hover {
-  background-color: @accent;
-  border: 1px solid @accent-bright;
-  color: @fg;
-  transition: all 0.2s ease-in-out;
-}
-
-/* === Audio =================================================== */
-
-#pulseaudio.muted {
-  background-color: @accent;
-  color: @bg;
-}
-
-/* === Network ================================================ */
-
-#network.disconnected {
-  background-color: @accent-bright;
-  color: @bg;
-}
-
-/* === Clock =================================================== */
-
-#clock {
-  font-weight: bold;
-  font-size: 12px;
-  color: @fg;
-}
-
-/* === Asus Profile =========================================== */
-
-#custom-asus-profile {
-  font-weight: bold;
-  font-size: 12px;
-  color: @fg-muted;
-}
-
-/* === Battery ================================================ */
-
-#custom-battery {
-  border-radius: 6px;
-}
-
-/* critical */
-#custom-battery .battery-critical {
-  background-color: @accent;
-  color: @fg;
-  font-weight: bold;
-}
-
-/* warning */
-#custom-battery .battery-warning {
-  background-color: @accent-bright;
-  color: @bg;
-}
-
-/* normal */
-#custom-battery .battery-normal {
-  color: @fg;
-}
-
-/* === Backlight ============================================== */
-
-#backlight {
-  background-color: @bg;
-}
-
-/* === Tray ==================================================== */
-
-#tray {
-  background-color: @bg-2;
-  padding: 4px 8px;
-}
-
-/* === Tooltips =============================================== */
-
-tooltip {
-  background-color: @bg-2;
-  border: 1px solid @accent;
-  color: @fg;
-}
-
-tooltip label {
-  color: @fg-muted;
-}
-
-/* === Smooth transitions ===================================== */
-
-#workspaces button,
-#custom-microphone,
-#custom-volume,
-#pulseaudio,
 #network,
 #bluetooth,
-#clock,
-#tray {
-  transition: all 0.15s ease-in-out;
+#wireplumber,
+#custom-notification,
+#tray,
+#workspaces {
+    background-color: rgba(0, 0, 0, 1);
+    border-radius: 25px;
+    padding: 0px 15px;
+    color: #e76f8b;
 }
+
+/* Tray — светлый фон чтобы иконки были видны */
+#tray {
+    background-color: rgba(224, 178, 165, 0.15);
+    color: #e0b2a5;
+}
+
+#tray menu,
+#tray menu *,
+#tray menuitem,
+#tray separator {
+    border-radius: 0px;
+    margin: 0px;
+    padding: 2px 8px;
+}
+
+#tray menu {
+    border-radius: 8px; /* только внешний контейнер меню */
+    background: rgba(0, 0, 0, 0.95);
+    border: 1px solid #e76f8b;
+}
+
+#tray separator {
+    background: #e76f8b;
+    min-height: 1px;
+    padding: 0;
+    margin: 2px 4px;
+}
+
+#tray > * { color: #e0b2a5; }
+
+/* Audio (wireplumber/pulseaudio) — иконки светлые */
+#wireplumber,
+#pulseaudio {
+    background-color: rgba(0, 0, 0, 1);
+    border-radius: 300px;
+    padding: 0px 15px;
+    color: #e0b2a5;
+}
+
+#wireplumber.muted,
+#pulseaudio.muted {
+    color: #e76f8b;
+}
+#workspaces:hover { color: #e0b2a5; }
+
+#backlight { padding-top: 2px; }
+
+/* Window title */
+#window {
+    background: linear-gradient(45deg, #e76f8b, #e0b2a5);
+    padding-left: 17px;
+    padding-right: 17px;
+}
+
+window#waybar.empty #window {
+    background: transparent;
+}
+
+/* Network */
+#network.disconnected { color: #e0b2a5; }
+
+/* Battery */
+#battery.charging,
+#battery.plugged {
+    color: black;
+    background: linear-gradient(45deg, #e76f8b, #e0b2a5);
+}
+
+@keyframes blink {
+    to { background-color: black; color: #e0b2a5; }
+}
+
+#battery.warning:not(.charging),
+#battery.critical:not(.charging) {
+    background-color: #e0b2a5;
+    color: black;
+}
+#custom-mocp {
+    background-color: rgba(0, 0, 0, 1);
+    border-radius: 300px;
+    padding: 0px 15px;
+    color: #e76f8b;
+    transition: all 0.25s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+#battery.warning:not(.charging) { animation: blink 1s linear infinite alternate; }
+#battery.critical:not(.charging) { animation: blink 0.5s linear infinite alternate; }

@@ -13,13 +13,9 @@ command = "rust-analyzer"
 
 [language-server.rust-analyzer.config]
 check = { command = "clippy" }
-
 cargo = { allFeatures = false, loadOutDirsFromCheck = false }
-
 rustfmt = { extraArgs = ["+nightly"] }
-
-procMacro = { enable = false }
-
+procMacro = { enable = true}
 diagnostics = { disabled = ["unresolved-proc-macro"] }
 
 # === Python ===
@@ -130,7 +126,6 @@ args = ["--lsp"]
 formattingProvider = "ormolu"
 
 # === Ada ===
-
 [[language]]
 name = "ada"
 language-servers = ["als"]
@@ -193,11 +188,10 @@ language-servers = ["kotlin-lsp"]
 [language-server.kotlin-lsp]
 command = "kotlin-lsp"
 
-# === Zig ===
+# === COOL ===
 [[language]]
-name = "zig"
-language-servers = ["zls"] 
+name = "c-sharp"
+language-servers = ["omnisharp"]
 
-[language-server.zls]
-command = "zls"
-
+[language-server.omnisharp]
+command = "omnisharp"
