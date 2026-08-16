@@ -1,5 +1,5 @@
 [env]
-MISE_DATA_DIR = "/home/dyr0ch1a/Disk/Disk_A/App/Data/mise"
+MISE_DATA_DIR = "/home/dyr0ch1a/d/Programs/Data/mise"
 
 [tools]
 1password = "latest"

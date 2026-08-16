@@ -24,7 +24,7 @@
 #
 # So, for example:
 #
-MusicDir = ~/Disk/Disk_A/Music
+MusicDir = ~/d/Music
 #     Fastdir4 = ${MusicDir}/mp3/etc
 #
 # Variable names are limited to those accepted by the BASH shell; that

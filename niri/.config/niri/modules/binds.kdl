@@ -69,12 +69,16 @@ binds {
     "XF86MonBrightnessDown" allow-when-locked=true { spawn "brightnessctl" "set" "5%-"; }
 
     // Screenshots
+    "Alt+Print" {
+        spawn "sh" "-c" "grim -g \"$(slurp)\" /home/dyr0ch1a/d/Pictures/Screen/$(date +%F_%H-%M-%S).png";
+    }
+
     "Print" {
-        spawn "sh" "-c" "grim -g \"$(slurp)\" /home/dyr0ch1a/Disk/Disk_A/Pictures/Screen/$(date +%F_%H-%M-%S).png";
+        spawn "sh" "-c" "grim -g \"$(slurp)\" - | wl-copy"
     }
 
     "Shift+Print" {
-        spawn "sh" "-c" "grim /home/dyr0ch1a/Disk/Disk_A/Pictures/Screen/$(date +%F_%H-%M-%S)-full.png";
+        spawn "sh" "-c" "grim - | wl-copy"
     }
 
 }

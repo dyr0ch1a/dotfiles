@@ -8,3 +8,7 @@ rules = [
   { name = "*/", fg = "#D94C8A" },
   { name = "*",  fg = "#C9C9C9" },
 ]
+
+[flavor]
+dark = "noctalia"
+light = "noctalia"
