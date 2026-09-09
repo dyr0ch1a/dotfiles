@@ -81,6 +81,13 @@ binds {
         spawn "sh" "-c" "grim - | wl-copy"
     }
 
+    "Super+Print" {
+        spawn "sh" "-c" "wf-recorder -g \"$(slurp)\" -f /home/dyr0ch1a/d/Video/video.r/recording-$(date +%F_%H-%M.%S).mp4 & echo $! > /tmp/wf-recorder.pid"
+    }
+    "Super+Alt+Print" {
+        spawn "sh" "-c" "kill -INT \"$(cat /tmp/wf-recorder.pid)\" && rm /tmp/wf-recorder.pid"
+    }
+
 }
 
 

@@ -13,33 +13,33 @@ hovered = { fg = "#0A0A0A", bg = "#FF007F" }
 
 [opener]
 edit = [
-  { run = 'helix "$@"', block = true, desc = "Helix" },
-  { run = 'vim "$@"', block = true, desc = "VIM" }
+  { run = 'helix "%s"', block = true, desc = "Helix" },
+  { run = 'vim "%s"', block = true, desc = "VIM" }
 ]
 
 play = [
-  { run = 'mpv --volume=30 "$@"', orphan = true, for = "unix", desc = "MPV" }
+  { run = 'mpv --volume=30 %s', orphan = true, for = "unix", desc = "MPV" }
 ]
 
 image = [
-  { run = 'imv "$@"', block = true, desc = "IMV" },
-  { run = 'sh -c "chafa \"$@"\"; read', block=true, desc = "Chafa" },
+  { run = 'imv %s', block = true, desc = "IMV" },
+  { run = 'chafa %s', block=true, desc = "Chafa" },
 
 ]
 
 reader = [
-  { run = 'zathura "$@"', block=true, desc = "Zathura" },
-  { run = 'okular "$@"', block=true, desc = "Okular" },
+  { run = 'zathura %s', block=true, desc = "Zathura" },
+  { run = 'okular %s', block=true, desc = "Okular" },
 ]
 
 office = [
-  { run = 'libreoffice "$@"', orphan = true, desc = "LibreOffice" },
-  { run = 'onlyoffice-desktopeditors "$@"', orphan = true, desc = "OnlyOffice" },
+  { run = 'libreoffice %s', orphan = true, desc = "LibreOffice" },
+  { run = 'onlyoffice-desktopeditors %s', orphan = true, desc = "OnlyOffice" },
 ]
 
 music = [
-  { run = 'mpv --volume=30 --force-window=yes "$@"', orphan = true, for = "unix", desc = "MPV" },
-  { run = 'mocp --volume=50 --playit "$@"', orphan = true, for = "unix", desc = "Moc" }
+  { run = 'mpv --volume=30 --force-window=yes %s', orphan = true, for = "unix", desc = "MPV" },
+  { run = 'mocp --volume=50 --playit %s', orphan = true, for = "unix", desc = "Moc" }
 ]
 
 [open]

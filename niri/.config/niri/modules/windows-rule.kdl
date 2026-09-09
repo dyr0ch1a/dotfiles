@@ -19,6 +19,13 @@ window-rule {
 }
 
 window-rule {
+	match app-id="helium"
+    default-column-width {
+        proportion 1.0
+    }
+}
+
+window-rule {
 	match app-id="obsidian"
     default-column-width {
         proportion 1.0
@@ -41,7 +48,7 @@ window-rule {
 window-rule{
 	match app-id=r#"io.github.tdesktop_x64.TDesktop"#
     default-column-width {
-        proportion 0.5
+        proportion 0.6
     }
 }
 
